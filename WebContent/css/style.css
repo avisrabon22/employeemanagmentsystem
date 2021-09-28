@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+
+\\Tag Section******************************************
+body{
+box-sizing:content-box;
+}
+
+h1{text-align:center;
+display:block;
+}
+
+table{
+	border: 1px solid black;	
+}
+
+th,tr,td{
+	border:1px solid black; 
+}
+
+\\Class Section*****************************************
+.loginform {
+	align-content: center;
+	display: block;
+	margin-left: 40%;	
+}
+
+.signup{
+	margin: 1%;
+}
+
+.gap{
+	margin:1%;
+}

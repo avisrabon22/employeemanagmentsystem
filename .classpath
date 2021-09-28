@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-14">
+		<attributes>
+			<attribute name="module" value="true"/>
+			<attribute name="limit-modules" value="java.se,jdk.accessibility,jdk.httpserver,jdk.incubator.foreign,jdk.jartool,jdk.jconsole,jdk.jshell,jdk.jsobject,jdk.management.jfr,jdk.net,jdk.nio.mapmode,jdk.sctp,jdk.security.auth,jdk.security.jgss,jdk.unsupported.desktop,jdk.xml.dom,jdk.charsets,jdk.hotspot.agent,jdk.rmic,jdk.jstatd,jdk.jcmd,jdk.crypto.cryptoki,jdk.naming.rmi,jdk.zipfs,jdk.crypto.mscapi,jdk.editpad,java.smartcardio,jdk.scripting.nashorn.shell,jdk.internal.vm.compiler.management,jdk.aot,jdk.incubator.jpackage,jdk.naming.dns,jdk.localedata"/>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
