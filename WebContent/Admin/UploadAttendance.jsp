@@ -20,7 +20,7 @@
 	<div class="text-center">
 		<form action="<%=request.getContextPath() %>/UploadAttendanceServlet" method="post">
 			<div>
-				<select name="Role">
+				<select name="Role" id="Role">
 					<option>Your choose</option>
 					<option value="Users">Users</option>
 				</select>
@@ -28,6 +28,11 @@
 			<button type="submit">Submit</button>
 		</form>
 	</div>
+	<%String nullAttend=(String)session.getAttribute("nullattend");
+	if(nullAttend!=null){%>
+		<p class="text-center text-danger"><%=nullAttend%></p>
+	
+	<%session.removeAttribute("nullattend");}%>
 
 </body>
 </html>
