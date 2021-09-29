@@ -21,7 +21,7 @@
 		<form action="<%=request.getContextPath() %>/UploadAttendanceServlet" method="post">
 			<div>
 				<select name="Role" id="Role">
-					<option>Your choose</option>
+					<option selected disabled>Your choose</option>
 					<option value="Users">Users</option>
 				</select>
 			</div>

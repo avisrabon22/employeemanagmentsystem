@@ -60,8 +60,8 @@
 					value="Other">
 			</div>
 			<div class="m-2">
-				<label>*</label><select name="Role" required>
-					<option>Choose your user</option>
+				<label>*</label><select name="Role" id="Role" required>
+					<option selected disabled>Choose your user</option>
 					<option value="ADMIN">Admin</option>
 					<option value="USER">Normal user</option>
 				</select>
@@ -107,7 +107,7 @@
 			</div>
 			<div class="m-2">
 				<label>*</label><select name="Role" required>
-					<option>Choose your user</option>
+					<option selected disabled>Choose your user</option>
 					<option value="ADMIN">Admin</option>
 					<option value="USER">Normal user</option>
 				</select>
