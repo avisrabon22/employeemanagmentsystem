@@ -18,6 +18,20 @@
 	
 	<h1 class="text-center">Attendance</h1>
 	
+	<div class="text-center">
+	<table class="table">
+	<thead>
+	<tr><th>ID</th></tr>
+	</thead>
+	
+	
+	
+	
+	</table>
+	
+	
+	</div>
+	
 	
 	
 	
