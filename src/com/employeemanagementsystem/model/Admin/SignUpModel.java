@@ -1,11 +1,18 @@
 package com.employeemanagementsystem.model.Admin;
 
 public class SignUpModel {
-
+	 private int ID;
 	private String FullName, Username, Password, Gender, Role, ContactNumber;
-    private int ID;
+   
 	
 	
+	public SignUpModel( int iD,String fullName) {
+		super();
+		ID = iD;
+		FullName = fullName;
+		
+	}
+
 	public int getID() {
 		return ID;
 	}

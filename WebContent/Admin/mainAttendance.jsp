@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.employeemanagementsystem.model.Admin.SignUpModel"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -17,18 +20,25 @@
 	%>
 
 	<h1 class="text-center">Attendance</h1>
-	<% %>
+	<%List<SignUpModel> userofAttandance=(ArrayList<SignUpModel>)session.getAttribute("userofAttandance");
+	String nullAttandance=(String)session.getAttribute("nouserforAttandance");
+	if(nullAttandance!=null){
+	%>
+	<p class="text-center"><%=nullAttandance%></p>
+	<%}else{%>
 	<form class="text-center" action="" method="post">
+		<%for( SignUpModel userAttandance:userofAttandance){%>
 		<div class="text-center">
-			<span><input name="ID" type="text" value="" placeholder=""></span>
-			<span><input name="Name" type="text" value=""
+			<span><input disabled name="ID" type="text"
+				value="<%=userAttandance.getID()%>" placeholder=""></span> <span><input disabled
+				name="Name" type="text" value="<%=userAttandance.getFullName()%>"
 				placeholder=""></span> <span><input Name="InTime"
-				type="text" placeholder="In Time"></span> <span><input
-				Name="OutTime" type="text" placeholder="Out Time"></span> <span><input
+				type="time" placeholder="In Time"></span> <span><input
+				Name="OutTime" type="time" placeholder="Out Time"></span> <span><input
 				Name="Status" type="text" placeholder="Status"></span> <input
 				type="submit" value="Mark">
 		</div>
-
+		<%}}%>
 	</form>
 
 
