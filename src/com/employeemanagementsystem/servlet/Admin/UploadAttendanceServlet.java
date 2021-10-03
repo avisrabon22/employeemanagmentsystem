@@ -2,6 +2,7 @@ package com.employeemanagementsystem.servlet.Admin;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.employeemanagementsystem.DAO.Admin.UploadAttandanceDao;
+import com.employeemanagementsystem.model.Admin.AttandanceModel;
 import com.employeemanagementsystem.model.Admin.SignUpModel;
 
 
@@ -38,12 +40,15 @@ public class UploadAttendanceServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		try {
 			List<SignUpModel> userofAttandance=fectUserForAttandance.userListForAttandance();
+			List<AttandanceModel> listofupdatedUsers = new ArrayList<AttandanceModel>();
 			if(request.getParameter("Role")!=null){
-				if(userofAttandance==null) {
+				if(userofAttandance==null||listofupdatedUsers==null) {
 					session.setAttribute("nouserforAttandance", "No User Exist!!");
 					response.sendRedirect("Admin/mainAttendance.jsp");
 				}
 				session.setAttribute("userofAttandance", userofAttandance);
+				session.setAttribute("UpdatedUserofAttandance", listofupdatedUsers);
+				
 			response.sendRedirect("Admin/mainAttendance.jsp");
 			}else {
 				session.setAttribute("nullattend", "Select user type");
