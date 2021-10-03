@@ -6,14 +6,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-@WebServlet("/UploadAttendanceServlet")
-public class UploadAttendanceServlet extends HttpServlet {
+@WebServlet("/MainAttendanceServlet")
+public class MainAttendanceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
- 
-    public UploadAttendanceServlet() {
+   
+    public MainAttendanceServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -23,17 +22,8 @@ public class UploadAttendanceServlet extends HttpServlet {
 		
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		if(request.getParameter("Role")!=null){
-		
-		response.sendRedirect("Admin/mainAttendance.jsp");
-		}else {
-			session.setAttribute("nullattend", "Select user type");
-			response.sendRedirect("Admin/UploadAttendance.jsp");
-			System.out.println("Null In Attendance");
-		}
-		
 		
 	}
 

@@ -17,6 +17,14 @@
 	%>
 	
 	<h1 class="text-center">Attendance</h1>
+	<form class="text-center">
+	<select >
+	<option selected disabled>Select your user</option>
+	<% %>
+	<option></option>
+	</select>
+	
+	</form>
 	
 	
 	
