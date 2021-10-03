@@ -17,11 +17,12 @@
 	%>
 
 	<h1 class="text-center">Attendance</h1>
+	<% %>
 	<form class="text-center" action="" method="post">
 		<div class="text-center">
-			<span><input name="ID" type="text" value="" placeholder="ID"></span>
+			<span><input name="ID" type="text" value="" placeholder=""></span>
 			<span><input name="Name" type="text" value=""
-				placeholder="Name"></span> <span><input Name="InTime"
+				placeholder=""></span> <span><input Name="InTime"
 				type="text" placeholder="In Time"></span> <span><input
 				Name="OutTime" type="text" placeholder="Out Time"></span> <span><input
 				Name="Status" type="text" placeholder="Status"></span> <input
