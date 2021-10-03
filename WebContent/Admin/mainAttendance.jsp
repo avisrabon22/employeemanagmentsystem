@@ -26,6 +26,29 @@
 	
 	</form>
 	
+	<div class="text-center">
+	<table class="table border">
+	<thead>
+	<tr>
+	<th>ID</th>
+	<th>Name</th>
+	<th>In Time</th>
+	<th>Out Time</th>
+	<th>Working Time</th>
+	<th>Status</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr><td>1</td></tr>
+	</tbody>
+	
+	
+	</table>
+	
+	
+	</div>
+	
 	
 	
 	
