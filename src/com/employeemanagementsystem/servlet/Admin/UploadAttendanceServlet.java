@@ -40,14 +40,14 @@ public class UploadAttendanceServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		try {
 			List<SignUpModel> userofAttandance=fectUserForAttandance.userListForAttandance();
-			List<AttandanceModel> listofupdatedUsers = new ArrayList<AttandanceModel>();
+//			List<AttandanceModel> listofupdatedUsers = new ArrayList<AttandanceModel>();
 			if(request.getParameter("Role")!=null){
-				if(userofAttandance==null||listofupdatedUsers==null) {
+				if(userofAttandance==null) {
 					session.setAttribute("nouserforAttandance", "No User Exist!!");
 					response.sendRedirect("Admin/mainAttendance.jsp");
 				}
 				session.setAttribute("userofAttandance", userofAttandance);
-				session.setAttribute("UpdatedUserofAttandance", listofupdatedUsers);
+				
 				
 			response.sendRedirect("Admin/mainAttendance.jsp");
 			}else {

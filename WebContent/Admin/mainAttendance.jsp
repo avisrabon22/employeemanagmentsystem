@@ -44,24 +44,23 @@
 					value="<%=userAttandance.getID()%>" placeholder="" class="m-1"></td>
 				<td>Name<input disabled name="Name" type="text"
 					value="<%=userAttandance.getFullName()%>" placeholder=""
-					class="m-1"></td><%}%>
-					<%for(AttandanceModel updateduserattandance : UpdatedUserofAttandance){%>
+					class="m-1"></td>
 				<td>In Time<input Name="InTime" type="time"
-					value="<%=updateduserattandance.getInTime()%>"
+					value=""
 					placeholder="In
 				Time" class="m-1">
 				</td>
 				<td>Out Time<input Name="OutTime" type="time"
-					value="<%=updateduserattandance.getOutTime()%>"
+					value=""
 					placeholder="Out Time" class="m-1"></td>
 				<td><input Name="Status" type="text"
-					value="<%=updateduserattandance.getStatus()%>" placeholder="Status"></td>
+					value="" placeholder="Status"></td>
 				<td><input type="submit" value="Mark"></td>
 
 			</tr>
-			<%
+			<%}
 				}
-				}
+				
 				%>
 		</table>
 	</form>
