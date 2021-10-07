@@ -33,7 +33,7 @@
 	<%
 	} else {
 	%>
-	<form class="text-center" action="<%=request.getContextPath()%>/UploadAttendanceServlet" method="post">
+	<form class="text-center" action="<%=request.getContextPath()%>/MainAttandanceServlet" method="post">
 
 		<table class="table border">
 			<%for(SignUpModel userAttandance : userofAttandance)
