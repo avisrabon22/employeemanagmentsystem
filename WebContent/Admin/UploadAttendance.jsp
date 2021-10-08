@@ -27,12 +27,15 @@
 			</div>
 			<button type="submit">Submit</button>
 		</form>
+		<button onclick="fun">Click me</button>
 	</div>
 	<%String nullAttend=(String)session.getAttribute("nullattend");
 	if(nullAttend!=null){%>
 		<p class="text-center text-danger"><%=nullAttend%></p>
 	
 	<%session.removeAttribute("nullattend");}%>
+	
+
 
 </body>
 </html>
