@@ -6,25 +6,35 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.employeemanagementsystem.DAO.Admin.UploadAttandanceDao;
 
 @WebServlet("/MainAttendanceServlet")
 public class MainAttendanceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
-    public MainAttendanceServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	UploadAttandanceDao AttendaceList = new UploadAttandanceDao();
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	public MainAttendanceServlet() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void init() {
+		AttendaceList = new UploadAttandanceDao();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+
 		
+		session.setAttribute("AttandanceList", session);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 	}
 
 }

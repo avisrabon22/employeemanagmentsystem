@@ -13,9 +13,9 @@ import com.employeemanagementsystem.model.Admin.SignUpModel;
 
 public class UploadAttandanceDao {
 	private Connection connect = Dbconnection.getconnect();
-	String ListUserForAttandance = "select FullName from users where ID=?";
+	String ListUserForAttandance = "select ID,FullName from users where ID=?";
 	String insertAttandance = "insert into attandance values(default,?,?,?,?)";
-	String UpdatedAttandance = "select InTime,OutTime,Status from attandance";
+	String UpdatedAttandance = "select ID,FullName from users union select InTime,OutTime,Status from attandance";
 
 	SignUpModel users = new SignUpModel();
 
@@ -36,6 +36,7 @@ public class UploadAttandanceDao {
 		}
 		ps.close();
 		rs.close();
+		System.out.println("In attendance DAO");
 		
 		return listofUsers;
 	}

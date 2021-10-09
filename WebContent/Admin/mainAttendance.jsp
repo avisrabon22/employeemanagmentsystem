@@ -33,8 +33,6 @@
 	<%
 	} else {
 	%>
-	<form class="text-center" action="<%=request.getContextPath()%>/UploadAttendanceServlet" method="post">
-
 		<table class="table border">
 			<%for(SignUpModel userAttandance : userofAttandance)
 			 {
@@ -64,7 +62,6 @@
 				}
 				%>
 		</table>
-	</form>
 
 
 

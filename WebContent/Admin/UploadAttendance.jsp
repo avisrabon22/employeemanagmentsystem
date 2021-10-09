@@ -21,19 +21,19 @@
 	%>
 
 	<h1 class="text-center">Select to Mark attendance</h1>
-	<%
-	List<SignUpModel> userofAttandance = (ArrayList<SignUpModel>) session.getAttribute("userofAttandance");
-	List<AttandanceModel> UpdatedUserofAttandance = (ArrayList<AttandanceModel>) session
-			.getAttribute("UpdatedUserofAttandance");
-	String nullAttandance = (String) session.getAttribute("nouserforAttandance");%>
 
-	<div>
-		<form class="text-center"
-			action="<%=request.getContextPath()%>/UploadAttendanceServlet"
-			method="post">
-			<%
-			for (SignUpModel userAttandance : userofAttandance) {
+
+	<div class="text-center">
+		<%
+	List<SignUpModel> userofAttandance = (List<SignUpModel>) session.getAttribute("userofAttandance");
+	/* String nullAttandance = (String) session.getAttribute("nullattend"); */
+	if(userofAttandance!=null){		
+	for (SignUpModel userAttandance : userofAttandance) {
 			%>
+		<form class="text-center"
+			action="<%=request.getContextPath()%>/MainAttendanceServlet"
+			method="post">
+
 
 			<div>
 				ID<input disabled name="ID" type="text"
@@ -44,7 +44,7 @@
 					value="<%=userAttandance.getFullName()%>" placeholder=""
 					class="m-1">
 			</div>
-			
+
 			<div>
 				In Time<input Name="InTime" type="time" placeholder="In
 				Time"
@@ -58,12 +58,10 @@
 				<input Name="Status" type="text" placeholder="Status">
 			</div>
 			<input type="submit" value="Mark">
-
-<%
-			}
-			%>
 		</form>
+		<%
+			}}
+			%>
 	</div>
-
 </body>
 </html>

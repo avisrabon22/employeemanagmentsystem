@@ -35,7 +35,7 @@
 			method="post">
 			<!--*****************************************************************************-->
 			<div class="mb-1">
-				<input type="number" required name="ID" placeholder="ID" readonly
+				<input type="number" required name="ID" placeholder="ID" readonly disabled
 					value="<%=updates.getID()%>" />
 			</div>
 			<div class="mb-1">

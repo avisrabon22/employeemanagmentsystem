@@ -40,8 +40,8 @@
 		
 		<div class="m-2">
 			<a
-				href="http://localhost:8080/employeemanagementsystem/Admin/UploadAttendance.jsp"
-				class="">Mark Attendance</a>
+				href="<%=request.getContextPath()%>/MainAttendanceServlet"
+				class="">Attendance</a>
 		</div>
 
 	</div>
