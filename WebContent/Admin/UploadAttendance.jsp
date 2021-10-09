@@ -20,7 +20,7 @@
 	}
 	%>
 
-	<h1 class="text-center">Select to Mark attendance</h1>
+	<h1 class="text-center">Mark attendance</h1>
 	<%
 	List<SignUpModel> userofAttandance = (ArrayList<SignUpModel>) session.getAttribute("userofAttandance");
 	List<AttandanceModel> UpdatedUserofAttandance = (ArrayList<AttandanceModel>) session
