@@ -73,6 +73,8 @@ if(UserList==null){
 						href="<%=request.getContextPath()%>/SignupServlet?edit_user=<%=user.getID()%>">Edit</a>
 					<td><a
 						href="<%=request.getContextPath()%>/UserListServlet?delete_user=<%=user.getID()%>">Delete</a></td>
+						<td><a
+						href="<%=request.getContextPath()%>/UploadAttendanceServlet?mark_attendance=<%=user.getID()%>">Mark Attendance</a></td>
 				</tr>
 				<%
 				}

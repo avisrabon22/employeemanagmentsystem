@@ -13,19 +13,20 @@ import com.employeemanagementsystem.model.Admin.SignUpModel;
 
 public class UploadAttandanceDao {
 	private Connection connect = Dbconnection.getconnect();
-	String ListUserForAttandance = "select ID,FullName from users";
+	String ListUserForAttandance = "select FullName from users where ID=?";
 	String insertAttandance = "insert into attandance values(default,?,?,?,?)";
 	String UpdatedAttandance = "select InTime,OutTime,Status from attandance";
 
 	SignUpModel users = new SignUpModel();
 
-	public List<SignUpModel> userListForAttandance() throws SQLException {
+	public List<SignUpModel> userListForAttandance(int ID) throws SQLException {
 		List<SignUpModel> listofUsers = new ArrayList<SignUpModel>();
 
 		PreparedStatement ps = connect.prepareStatement(ListUserForAttandance);
 
+		
+		ps.setInt(1,ID);
 		ResultSet rs = ps.executeQuery();
-
 		rs.next();
 		while (rs.next()) {
 			SignUpModel attandance = new SignUpModel();

@@ -33,31 +33,27 @@ public class UploadAttendanceServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		try {
-			List<SignUpModel> userofAttandance=fectUserForAttandance.userListForAttandance();
-			List<AttandanceModel> listofupdatedUsers = new ArrayList<AttandanceModel>();
-			if(request.getParameter("Role")!=null){
-				if(userofAttandance==null||listofupdatedUsers==null) {
-					session.setAttribute("nouserforAttandance", "No User Exist!!");
-					response.sendRedirect("Admin/mainAttendance.jsp");
-				}
+			int ID=Integer.parseInt(request.getParameter("mark_attendance"));
+			List<SignUpModel> userofAttandance=fectUserForAttandance.userListForAttandance(ID);
+			if(ID>0){
 				session.setAttribute("userofAttandance", userofAttandance);
-				session.setAttribute("UpdatedUserofAttandance", listofupdatedUsers);
+					response.sendRedirect("Admin/UploadAttendance.jsp");
+				}
 				
-			response.sendRedirect("Admin/mainAttendance.jsp");
-			}else {
-				session.setAttribute("nullattend", "Select user type");
+			else {
+				session.setAttribute("nullattend", "No user found");
 				response.sendRedirect("Admin/UploadAttendance.jsp");
 				System.out.println("Null In Attendance");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		
 		
 		
