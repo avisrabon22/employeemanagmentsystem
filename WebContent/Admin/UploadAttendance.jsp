@@ -45,18 +45,7 @@
 					class="m-1">
 			</div>
 
-			<div>
-				In Time<input Name="InTime" type="time" value="<%=userAttandance.getInTime() %>" placeholder="In
-				Time"
-					class="m-1">
-			</div>
-			<div>
-				Out Time<input Name="OutTime" type="time" value="<%=userAttandance.getOutTime()%>" placeholder="Out Time"
-					class="m-1">
-			</div>
-			<div>
-				<input Name="Status" type="text" value="<%=userAttandance.getStatus()%>" placeholder="Status">
-			</div>
+			
 			<input type="submit" value="Mark">
 		</form>
 		<%
