@@ -21,7 +21,15 @@
 	%>
 
 	<h1 class="text-center">Mark attendance</h1>
+<<<<<<< HEAD
 
+=======
+	<%
+	List<SignUpModel> userofAttandance = (ArrayList<SignUpModel>) session.getAttribute("userofAttandance");
+	List<AttandanceModel> UpdatedUserofAttandance = (ArrayList<AttandanceModel>) session
+			.getAttribute("UpdatedUserofAttandance");
+	String nullAttandance = (String) session.getAttribute("nouserforAttandance");%>
+>>>>>>> main
 
 	<div class="text-center">
 		<%
