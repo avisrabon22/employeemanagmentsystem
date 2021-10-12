@@ -25,7 +25,7 @@ public class UploadReportServlet extends HttpServlet {
 	}
 
 //	Path of the files************************************************************************************************
-	public static String filePath = "C:/Users/Avi/OneDrive/B.Sc.(IT)/6th Semester/BIT604-Major Project/EMP/WebContent/UploadedFiles/";
+	public static String filePath = "C:/Users/Avijit/git/employeemanagmentsystem/WebContent/UploadedFiles/";
 //	Get ***********************************************************************************
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException{
