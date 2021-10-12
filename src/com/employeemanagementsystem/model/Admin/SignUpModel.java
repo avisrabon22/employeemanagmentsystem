@@ -1,22 +1,23 @@
 package com.employeemanagementsystem.model.Admin;
 
+import java.sql.Time;
+
 public class SignUpModel {
-	 private int ID;
+	
+	private int ID;
 	private String FullName, Username, Password, Gender, Role, ContactNumber;
-   
-	
-	
-	public SignUpModel( int iD,String fullName) {
+//SignUp class object**************************************************************************************************
+	public SignUpModel(int iD, String fullName) {
 		super();
 		ID = iD;
 		FullName = fullName;
-		
+
 	}
 
 	public int getID() {
 		return ID;
 	}
-	
+
 	public void setID(int iD) {
 		ID = iD;
 	}
@@ -26,11 +27,10 @@ public class SignUpModel {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public SignUpModel(int iD,String fullName, String username, String password, String gender, String role,
+	public SignUpModel(int iD, String fullName, String username, String password, String gender, String role,
 			String contactNumber) {
 		super();
-		ID=iD;
+		ID = iD;
 		FullName = fullName;
 		Username = username;
 		Password = password;
@@ -38,7 +38,6 @@ public class SignUpModel {
 		Role = role;
 		ContactNumber = contactNumber;
 	}
-
 
 	public SignUpModel(String fullName, String username, String password, String gender, String role,
 			String contactNumber) {
@@ -50,10 +49,6 @@ public class SignUpModel {
 		Role = role;
 		ContactNumber = contactNumber;
 	}
-	
-	
-	
-	
 
 	public String getFullName() {
 		return FullName;
@@ -103,4 +98,64 @@ public class SignUpModel {
 		ContactNumber = contactNumber;
 	}
 
+//	attendance class object******************************************************************************************
+AttandanceModel attendanceModel = new AttandanceModel();
+	
+	private int AttendanceID=attendanceModel.getID();
+	private Time InTime=attendanceModel.getInTime();
+	private Time OutTime=attendanceModel.getOutTime();
+	private String Status=attendanceModel.getStatus();
+//**************************************************************************	
+	public SignUpModel(Time inTime, Time outTime, String status) {
+		super();
+		InTime = inTime;
+		OutTime = outTime;
+		Status = status;
+	}
+		
+	public int getAttendanceID() {
+		return AttendanceID;
+	}
+
+	public void setAttendanceID(int attendanceID) {
+		AttendanceID = attendanceID;
+	}
+
+	public Time getInTime() {
+		return InTime;
+	}
+
+	public void setInTime(Time inTime) {
+		InTime = inTime;
+	}
+
+	public Time getOutTime() {
+		return OutTime;
+	}
+
+	public void setOutTime(Time outTime) {
+		OutTime = outTime;
+	}
+
+	public String getStatus() {
+		return Status;
+	}
+
+	public void setStatus(String status) {
+		Status = status;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//End main Class***************************************************************************************************************	
 }
+

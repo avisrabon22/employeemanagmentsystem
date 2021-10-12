@@ -25,7 +25,7 @@
 
 
 	<div class="m-1">
-		<a href="http://localhost:8080/employeemanagementsystem/Report.jsp">Reports</a>
+		<a href="<%=request.getContextPath()%>/ReportServlet">Reports</a>
 	</div>
 
 	<div class="m-1">

@@ -45,7 +45,7 @@ public class UploadReportDao {
 //Database connection***********************************************************
 		Connection con = Dbconnection.getconnect();
 //		******************************SQL Query**************************************
-		String jdbc_insert_sql = "insert into employeereport(Id,name,Designation,performance_index,salary) values(?,?,?,?)";
+		String jdbc_insert_sql = "insert into employeereport(Id,name,Designation,salary) values(?,?,?,?)";
 //		*****************************************************************************
 		PreparedStatement ps = con.prepareStatement(jdbc_insert_sql);
 		for (int i = 1; i < dataHolder.size(); i++) {
