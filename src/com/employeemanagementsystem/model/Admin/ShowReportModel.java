@@ -20,11 +20,11 @@ public class ShowReportModel {
 		return logintime;
 	}
 
-	public void setLogintime(String string) {
-		this.logintime = string;
+	public void setLogintime(String logintime) {
+		this.logintime = logintime;
 	}
 
-	public String getLogouttime(String string) {
+	public String getLogouttime() {
 		return logouttime;
 	}
 
@@ -32,13 +32,15 @@ public class ShowReportModel {
 		this.logouttime = logouttime;
 	}
 
-	public String getWorkingtime(String string) {
+	public String getWorkingtime() {
 		return workingtime;
 	}
 
 	public void setWorkingtime(String workingtime) {
 		this.workingtime = workingtime;
 	}
+
+
 	
 
 }

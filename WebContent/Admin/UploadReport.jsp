@@ -90,6 +90,7 @@
 					<td><%=report.getLogintime()%></td>
 					<td><%=report.getLogouttime()%></td>
 					<td><%=report.getWorkingtime()%></td>
+
 				</tr>
 				<%
 				}
