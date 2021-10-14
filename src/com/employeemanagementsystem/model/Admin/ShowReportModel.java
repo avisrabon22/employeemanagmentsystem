@@ -1,64 +1,45 @@
 package com.employeemanagementsystem.model.Admin;
 
+import com.mongodb.internal.connection.Time;
+
 public class ShowReportModel {
-	private int ID, salary,perfomence_index;
-	private String Name, Designation;
-public ShowReportModel(int iD, int salary, int perfomence_index, String name, String designation) {
-		super();
-		ID = iD;
-		this.salary = salary;
-		this.perfomence_index = perfomence_index;
-		Name = name;
-		Designation = designation;
-	}
-public int getPerfomence_index() {
-		return perfomence_index;
-	}
-	public void setPerfomence_index(int perfomence_index) {
-		this.perfomence_index = perfomence_index;
-	}
-	//*************************************************************************************
-	public ShowReportModel(int iD, int salary, String name, String designation) {
-		super();
-		ID = iD;
-		this.salary = salary;
-		Name = name;
-		Designation = designation;
-	}
+	private Time logintime,logouttime,workingtime;
+
 	public ShowReportModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getID() {
-		return ID;
+	public ShowReportModel(Time logintime, Time logouttime, Time workingtime) {
+		super();
+		this.logintime = logintime;
+		this.logouttime = logouttime;
+		this.workingtime = workingtime;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public Time getLogintime() {
+		return logintime;
 	}
 
-	public int getSalary() {
-		return salary;
+	public void setLogintime(Time logintime) {
+		this.logintime = logintime;
 	}
 
-	public void setSalary(int salary) {
-		this.salary = salary;
+	public Time getLogouttime() {
+		return logouttime;
 	}
 
-	public String getName() {
-		return Name;
+	public void setLogouttime(Time logouttime) {
+		this.logouttime = logouttime;
 	}
 
-	public void setName(String name) {
-		Name = name;
+	public Time getWorkingtime() {
+		return workingtime;
 	}
 
-	public String getDesignation() {
-		return Designation;
+	public void setWorkingtime(Time workingtime) {
+		this.workingtime = workingtime;
 	}
+	
 
-	public void setDesignation(String designation) {
-		Designation = designation;
-	}
 }

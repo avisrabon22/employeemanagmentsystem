@@ -12,6 +12,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.*;
 import com.employeemanagementsystem.dbconnection.Dbconnection;
+import com.mongodb.internal.connection.Time;
 
 //Starting of the main class*********************************************************************************************************
 public class UploadReportDao {
@@ -45,7 +46,7 @@ public class UploadReportDao {
 //Database connection***********************************************************
 		Connection con = Dbconnection.getconnect();
 //		******************************SQL Query**************************************
-		String jdbc_insert_sql = "insert into employeereport(Id,name,Designation,performance_index,salary) values(?,?,?,?)";
+		String jdbc_insert_sql = "insert into employeereport(logintime,logouttime,workingtime) values(?,?,?)";
 //		*****************************************************************************
 		PreparedStatement ps = con.prepareStatement(jdbc_insert_sql);
 		for (int i = 1; i < dataHolder.size(); i++) {
@@ -56,21 +57,17 @@ public class UploadReportDao {
 
 				switch (IndexCell) {
 				case 0:
-					int ID = (int) cellData.getNumericCellValue();
-					ps.setInt(1, ID);
+					String logintime = cellData.getStringCellValue();
+					ps.setString(1, logintime);
 					break;
 				case 1:
-					String Name = cellData.getStringCellValue();
-					ps.setString(2, Name);
+					String logouttime = cellData.getStringCellValue();
+					ps.setString(2, logouttime);
 					break;
 				case 2:
-					String Designation = cellData.getStringCellValue();
-					ps.setString(3, Designation);
-					break;
-				case 3:
-					int Salary = (int) cellData.getNumericCellValue();
-					ps.setFloat(4, Salary);
-					break;
+					String workingtime = cellData.getStringCellValue();
+					ps.setString(3, workingtime);
+				
 				}
 			}
 			ps.executeUpdate();}

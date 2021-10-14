@@ -87,10 +87,9 @@
 				for (ShowReportModel report : Report) {
 				%>
 				<tr>
-					<td><%=report.getID()%></td>
-					<td><%=report.getName()%></td>
-					<td><%=report.getDesignation()%></td>
-					<td><%=report.getSalary()%></td>
+					<td><%=report.getLogintime()%></td>
+					<td><%=report.getLogouttime()%></td>
+					<td><%=report.getWorkingtime()%></td>
 				</tr>
 				<%
 				}
