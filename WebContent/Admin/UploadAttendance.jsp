@@ -33,8 +33,6 @@
 
 	<div class="text-center">
 		<%
-	List<SignUpModel> userofAttandance = (List<SignUpModel>) session.getAttribute("userofAttandance");
-	/* String nullAttandance = (String) session.getAttribute("nullattend"); */
 	if(userofAttandance!=null){		
 	for (SignUpModel userAttandance : userofAttandance) {
 			%>
