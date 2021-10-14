@@ -26,14 +26,16 @@ public class MainAttendanceServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
 
-		
-		session.setAttribute("AttandanceList", session);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+
+		session.getAttribute("InTime");
+		session.getAttribute("OutTime");
+		session.getAttribute("Status");
 
 	}
 

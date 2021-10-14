@@ -46,16 +46,16 @@
 			</div>
  			
  			<div>
-				In Time<input Name="InTime" type="time" placeholder="In
+				In Time<input name="InTime" type="time" placeholder="In
 				Time"
 					class="m-1">
 			</div>
 			<div>
-				Out Time<input Name="OutTime" type="time" placeholder="Out Time"
+				Out Time<input name="OutTime" type="time" placeholder="Out Time"
 					class="m-1">
 			</div>
 			<div>
-				<input Name="Status" type="text" placeholder="Status">
+				<input name="Status" type="text" placeholder="Status">
 			</div> 
 			<input type="submit" value="Mark">
 		</form>
