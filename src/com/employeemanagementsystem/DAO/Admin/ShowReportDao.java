@@ -25,8 +25,8 @@ public class ShowReportDao {
 		while (rs.next()) {
 			ShowReportModel showReport = new ShowReportModel();
 			showReport.setLogintime(rs.getString("logintime"));
-			showReport.getLogouttime(rs.getString("logouttime"));
-			showReport.getWorkingtime(rs.getString("workingtime"));
+			showReport.setLogouttime(rs.getString("logouttime"));
+			showReport.setWorkingtime(rs.getString("workingtime"));
 			
 			reportStorage.add(showReport);
 		}
