@@ -76,8 +76,9 @@
 				<tr>
 					<th>ID</th>
 					<th>Name</th>
-					<th>Designation</th>
-					<th>Salary</th>
+					<th>Login Time</th>
+					<th>Logout Time</th>
+					<th>Working Time</th>
 				</tr>
 			</thead>
 			<!--*****************************************************************************-->
