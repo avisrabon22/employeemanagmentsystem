@@ -23,7 +23,7 @@ public class DownloadServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out=response.getWriter();  
-		String filename = "test.xlsx";   
+		String filename = "ReportFormat.xlsx";   
 		  String filepath = "C:/Users/Avi/OneDrive/B.Sc.(IT)/6th Semester/BIT604-Major Project/EMP/WebContent/DownloadFiles/";   
 		  response.setContentType("APPLICATION/OCTET-STREAM");   
 		  response.setHeader("Content-Disposition","attachment; filename=\"" + filename + "\"");   

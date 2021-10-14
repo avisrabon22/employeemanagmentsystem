@@ -76,8 +76,9 @@
 				<tr>
 					<th>ID</th>
 					<th>Name</th>
-					<th>Designation</th>
-					<th>Salary</th>
+					<th>Login Time</th>
+					<th>Logout Time</th>
+					<th>Working Time</th>
 				</tr>
 			</thead>
 			<!--*****************************************************************************-->
@@ -86,10 +87,10 @@
 				for (ShowReportModel report : Report) {
 				%>
 				<tr>
-					<td><%=report.getID()%></td>
-					<td><%=report.getName()%></td>
-					<td><%=report.getDesignation()%></td>
-					<td><%=report.getSalary()%></td>
+					<td><%=report.getLogintime()%></td>
+					<td><%=report.getLogouttime()%></td>
+					<td><%=report.getWorkingtime()%></td>
+
 				</tr>
 				<%
 				}

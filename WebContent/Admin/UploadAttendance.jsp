@@ -20,7 +20,7 @@
 	}
 	%>
 
-	<h1 class="text-center">Select to Mark attendance</h1>
+	<h1 class="text-center">Mark attendance</h1>
 
 
 	<div class="text-center">
@@ -57,6 +57,9 @@
 			<div>
 				<input name="Status" type="text" placeholder="Status">
 			</div> 
+
+
+	
 			<input type="submit" value="Mark">
 		</form>
 		<%

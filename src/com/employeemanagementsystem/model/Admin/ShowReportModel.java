@@ -1,64 +1,46 @@
 package com.employeemanagementsystem.model.Admin;
 
 public class ShowReportModel {
-	private int ID, salary,perfomence_index;
-	private String Name, Designation;
-public ShowReportModel(int iD, int salary, int perfomence_index, String name, String designation) {
-		super();
-		ID = iD;
-		this.salary = salary;
-		this.perfomence_index = perfomence_index;
-		Name = name;
-		Designation = designation;
-	}
-public int getPerfomence_index() {
-		return perfomence_index;
-	}
-	public void setPerfomence_index(int perfomence_index) {
-		this.perfomence_index = perfomence_index;
-	}
-	//*************************************************************************************
-	public ShowReportModel(int iD, int salary, String name, String designation) {
-		super();
-		ID = iD;
-		this.salary = salary;
-		Name = name;
-		Designation = designation;
-	}
+	String logintime;
+	private String logouttime,workingtime;
+
 	public ShowReportModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getID() {
-		return ID;
+	public ShowReportModel(String logintime, String logouttime, String workingtime) {
+		super();
+		this.logintime = logintime;
+		this.logouttime = logouttime;
+		this.workingtime = workingtime;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public String getLogintime() {
+		return logintime;
 	}
 
-	public int getSalary() {
-		return salary;
+	public void setLogintime(String logintime) {
+		this.logintime = logintime;
 	}
 
-	public void setSalary(int salary) {
-		this.salary = salary;
+	public String getLogouttime() {
+		return logouttime;
 	}
 
-	public String getName() {
-		return Name;
+	public void setLogouttime(String logouttime) {
+		this.logouttime = logouttime;
 	}
 
-	public void setName(String name) {
-		Name = name;
+	public String getWorkingtime() {
+		return workingtime;
 	}
 
-	public String getDesignation() {
-		return Designation;
+	public void setWorkingtime(String workingtime) {
+		this.workingtime = workingtime;
 	}
 
-	public void setDesignation(String designation) {
-		Designation = designation;
-	}
+
+	
+
 }

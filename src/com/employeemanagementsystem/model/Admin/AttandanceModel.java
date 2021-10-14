@@ -5,7 +5,7 @@ import java.sql.Time;
 public class AttandanceModel {
 	private int TimeId;
 	private Time InTime, OutTime;
-	private char Status;
+	private String Status;
 	private int ID;
 
 	public AttandanceModel() {
@@ -13,7 +13,7 @@ public class AttandanceModel {
 		// TODO Auto-generated constructor stub
 	}
 
-	public AttandanceModel(Time inTime, Time outTime, char status, int iD) {
+	public AttandanceModel(Time inTime, Time outTime, String status, int iD) {
 		super();
 		InTime = inTime;
 		OutTime = outTime;
@@ -50,12 +50,12 @@ public class AttandanceModel {
 		OutTime = outTime;
 	}
 
-	public char getStatus() {
+	public String getStatus() {
 		return Status;
 	}
 
-	public void setStatus(char status) {
-		Status = status;
+	public void setStatus(String c) {
+		Status = c;
 	}
 
 	public int getID() {

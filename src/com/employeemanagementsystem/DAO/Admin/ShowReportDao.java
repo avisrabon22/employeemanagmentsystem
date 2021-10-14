@@ -24,10 +24,10 @@ public class ShowReportDao {
 //*******************************************************************
 		while (rs.next()) {
 			ShowReportModel showReport = new ShowReportModel();
-			showReport.setID(rs.getInt("ID"));
-			showReport.setName(rs.getString("Name"));
-			showReport.setDesignation(rs.getString("Designation"));
-			showReport.setSalary(rs.getInt("salary"));
+			showReport.setLogintime(rs.getString("logintime"));
+			showReport.setLogouttime(rs.getString("logouttime"));
+			showReport.setWorkingtime(rs.getString("workingtime"));
+			
 			reportStorage.add(showReport);
 		}
 		return reportStorage;
