@@ -1,43 +1,42 @@
 package com.employeemanagementsystem.model.Admin;
 
-import com.mongodb.internal.connection.Time;
-
 public class ShowReportModel {
-	private Time logintime,logouttime,workingtime;
+	String logintime;
+	private String logouttime,workingtime;
 
 	public ShowReportModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ShowReportModel(Time logintime, Time logouttime, Time workingtime) {
+	public ShowReportModel(String logintime, String logouttime, String workingtime) {
 		super();
 		this.logintime = logintime;
 		this.logouttime = logouttime;
 		this.workingtime = workingtime;
 	}
 
-	public Time getLogintime() {
+	public String getLogintime() {
 		return logintime;
 	}
 
-	public void setLogintime(Time logintime) {
-		this.logintime = logintime;
+	public void setLogintime(String string) {
+		this.logintime = string;
 	}
 
-	public Time getLogouttime() {
+	public String getLogouttime(String string) {
 		return logouttime;
 	}
 
-	public void setLogouttime(Time logouttime) {
+	public void setLogouttime(String logouttime) {
 		this.logouttime = logouttime;
 	}
 
-	public Time getWorkingtime() {
+	public String getWorkingtime(String string) {
 		return workingtime;
 	}
 
-	public void setWorkingtime(Time workingtime) {
+	public void setWorkingtime(String workingtime) {
 		this.workingtime = workingtime;
 	}
 	
