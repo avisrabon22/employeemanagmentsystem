@@ -33,30 +33,35 @@ public class UploadAttendanceServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		try {
-			int ID=Integer.parseInt(request.getParameter("mark_attendance"));
-			List<SignUpModel> userofAttandance=fectUserForAttandance.userListForAttandance(ID);
-			if(ID>0){
-				session.setAttribute("userofAttandance", userofAttandance);
-					response.sendRedirect("Admin/UploadAttendance.jsp");
-				}
-				
-			else {
-				session.setAttribute("nullattend", "No user found");
+
+		Uploadattandance(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+	}
+
+//	Get funtion for find and upload attendance
+	protected void Uploadattandance(HttpServletRequest request, HttpServletResponse response) throws IOException
+	{	
+	HttpSession session = request.getSession();
+	try {
+		int ID=Integer.parseInt(request.getParameter("mark_attendance"));
+		List<SignUpModel> userofAttandance=fectUserForAttandance.userListForAttandance(ID);
+		if(ID>0){
+			session.setAttribute("userofAttandance", userofAttandance);
 				response.sendRedirect("Admin/UploadAttendance.jsp");
-				System.out.println("Null In Attendance");
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+			
+		else {
+			session.setAttribute("nullattend", "No user found");
+			response.sendRedirect("Admin/UploadAttendance.jsp");
+			System.out.println("Null In Attendance");
 		}
+	} catch (SQLException e) {
+		e.printStackTrace();
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
-		
-	}
-
+	
+}
+	
+//	End Class************************************************************************************************
 }

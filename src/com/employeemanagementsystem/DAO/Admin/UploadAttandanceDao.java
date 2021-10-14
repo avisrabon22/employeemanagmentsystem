@@ -13,7 +13,7 @@ import com.employeemanagementsystem.model.Admin.SignUpModel;
 
 public class UploadAttandanceDao {
 	private Connection connect = Dbconnection.getconnect();
-	String ListUserForAttandance = "select ID,FullName from users where ID=?";
+	String ListUserForAttandance = "select id,fullname from users where id=?";
 	String insertAttandance = "insert into attandance values(default,?,?,?,?)";
 	String UpdatedAttandance = "select ID,FullName from users union select InTime,OutTime,Status from attandance";
 
@@ -27,7 +27,6 @@ public class UploadAttandanceDao {
 		
 		ps.setInt(1,ID);
 		ResultSet rs = ps.executeQuery();
-		rs.next();
 		while (rs.next()) {
 			SignUpModel attandance = new SignUpModel();
 			attandance.setID(rs.getInt("ID"));
@@ -37,8 +36,9 @@ public class UploadAttandanceDao {
 		ps.close();
 		rs.close();
 		System.out.println("In attendance DAO");
-		
 		return listofUsers;
+		
+		
 	}
 
 	public List<AttandanceModel> UpdatedUserListForAttandance() throws SQLException {

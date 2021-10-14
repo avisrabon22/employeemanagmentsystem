@@ -44,8 +44,8 @@
 					value="<%=userAttandance.getFullName()%>" placeholder=""
 					class="m-1">
 			</div>
-
-			<div>
+ 			
+ 			<div>
 				In Time<input Name="InTime" type="time" placeholder="In
 				Time"
 					class="m-1">
@@ -56,7 +56,7 @@
 			</div>
 			<div>
 				<input Name="Status" type="text" placeholder="Status">
-			</div>
+			</div> 
 			<input type="submit" value="Mark">
 		</form>
 		<%

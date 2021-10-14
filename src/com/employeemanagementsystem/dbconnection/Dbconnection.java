@@ -10,7 +10,7 @@ public class Dbconnection {
 		try {
 			if(con==null) {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				con=DriverManager.getConnection("jdbc:mysql://localhost:8000/employeemanagement","avijit","Avijit");
+				con=DriverManager.getConnection("jdbc:mysql://localhost:8000/employeemanagementsystem","avijit","Avijit");
 //				System.out.println("Connected with Database");
 			}
 			
