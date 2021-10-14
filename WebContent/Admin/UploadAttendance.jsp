@@ -36,11 +36,11 @@
 
 
 			<div>
-				ID<input disabled name="ID" type="text"
+				ID<input readonly name="ID" type="text"
 					value="<%=userAttandance.getID()%>" placeholder="" class="m-1">
 			</div>
 			<div>
-				Name<input disabled name="Name" type="text"
+				Name<input readonly name="Name" type="text"
 					value="<%=userAttandance.getFullName()%>" placeholder=""
 					class="m-1">
 			</div>

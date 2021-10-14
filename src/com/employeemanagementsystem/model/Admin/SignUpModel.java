@@ -98,63 +98,6 @@ public class SignUpModel {
 		ContactNumber = contactNumber;
 	}
 
-//	attendance class object******************************************************************************************
-AttandanceModel attendanceModel = new AttandanceModel();
-	
-	private int AttendanceID=attendanceModel.getID();
-	private Time InTime=attendanceModel.getInTime();
-	private Time OutTime=attendanceModel.getOutTime();
-	private String Status=attendanceModel.getStatus();
-//**************************************************************************	
-	public SignUpModel(Time inTime, Time outTime, String status) {
-		super();
-		InTime = inTime;
-		OutTime = outTime;
-		Status = status;
-	}
-		
-	public int getAttendanceID() {
-		return AttendanceID;
-	}
-
-	public void setAttendanceID(int attendanceID) {
-		AttendanceID = attendanceID;
-	}
-
-	public Time getInTime() {
-		return InTime;
-	}
-
-	public void setInTime(Time inTime) {
-		InTime = inTime;
-	}
-
-	public Time getOutTime() {
-		return OutTime;
-	}
-
-	public void setOutTime(Time outTime) {
-		OutTime = outTime;
-	}
-
-	public String getStatus() {
-		return Status;
-	}
-
-	public void setStatus(String status) {
-		Status = status;
-	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 //End main Class***************************************************************************************************************	
 }
