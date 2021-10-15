@@ -19,7 +19,7 @@ public class SignUpDao {
 //	SQL Commands @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	private static final String insert_user = "insert into users values(default,?,?,?,?,?,?)";
 	private static final String find_user = "select * from users where id=?";
-	private static final String update_user="update users set FullName=?,Username=?,Pass=?,Gender=?,_ROLE=?,ContactNumber=? where ID=?";
+	private static final String update_user="update users set FullName=?,username=?,pass=?,gender=?,_Role=?,contactnumber=? where id=?;";
 
 // DB connection#####################################################################	
 	static private Connection dbconnect = Dbconnection.getconnect();
@@ -76,16 +76,16 @@ public class SignUpDao {
 		PreparedStatement ps = dbconnect.prepareStatement(update_user);
 		try {
 //			System.out.println("In update Dao before");
-			ps.setInt(1, updatedata.getID());
-			ps.setString(2, updatedata.getFullName());
-			ps.setString(3, updatedata.getUsername());
-			ps.setString(4, updatedata.getPassword());
-			ps.setString(5, updatedata.getGender());
-			ps.setString(6, updatedata.getRole());
-			ps.setString(7, updatedata.getContactNumber());
+			ps.setString(1, updatedata.getFullName());
+			ps.setString(2, updatedata.getUsername());
+			ps.setString(3, updatedata.getPassword());
+			ps.setString(4, updatedata.getGender());
+			ps.setString(5, updatedata.getRole());
+			ps.setString(6, updatedata.getContactNumber());
+			ps.setInt(7, updatedata.getID());
 
 			ps.executeUpdate();
-			System.out.println("In update Dao after");
+//			System.out.println("In update Dao after");
 //			System.out.println("Data Inserted");
          
 		} catch (SQLException e) {

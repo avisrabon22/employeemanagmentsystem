@@ -24,6 +24,10 @@
 
 	<a href="<%=request.getContextPath()%>/UserListServlet"
 		class="nav-link">Users</a>
+
+	<a
+		href="http://localhost:8080/employeemanagementsystem/Admin/Signup.jsp"
+		class="nav-link">Add User</a>
 	<h1 class="text-center">User List</h1>
 
 	<%-- 	<%
@@ -73,8 +77,9 @@ if(UserList==null){
 						href="<%=request.getContextPath()%>/SignupServlet?edit_user=<%=user.getID()%>">Edit</a>
 					<td><a
 						href="<%=request.getContextPath()%>/UserListServlet?delete_user=<%=user.getID()%>">Delete</a></td>
-						<td><a
-						href="<%=request.getContextPath()%>/UploadAttendanceServlet?mark_attendance=<%=user.getID()%>">Mark Attendance</a></td>
+					<td><a
+						href="<%=request.getContextPath()%>/UploadAttendanceServlet?mark_attendance=<%=user.getID()%>">Mark
+							Attendance</a></td>
 				</tr>
 				<%
 				}

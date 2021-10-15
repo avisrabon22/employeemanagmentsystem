@@ -48,7 +48,8 @@ public class UpdateUserServlet extends HttpServlet {
 		SignUpModel userUpdate = new SignUpModel(ID, fname, username, password, Gender, Role, contactnumber);
 		SignUpDao userUpdateNew = new SignUpDao();
 		userUpdateNew.updateUserDBs(userUpdate);
-		response.sendRedirect("Admin/UserList.jsp");
+		
+		response.sendRedirect("UserListServlet");
 	}
 
 	
