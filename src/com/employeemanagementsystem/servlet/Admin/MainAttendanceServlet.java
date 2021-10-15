@@ -46,6 +46,7 @@ public class MainAttendanceServlet extends HttpServlet {
 	
 //	Post function************************************
 	protected void insertAttendance(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession();
 		String InTime=(String)request.getParameter("InTime");
 		String OutTime=(String)request.getParameter("OutTime");
 		String Status=(String)request.getParameter("Status");
@@ -54,7 +55,8 @@ public class MainAttendanceServlet extends HttpServlet {
         UploadAttandanceDao AttendaceInsert = new UploadAttandanceDao();
         try {
 			AttendaceInsert.insertAttandance(insertAttendance);
-			response.sendRedirect("Admin/Admindashboard.jsp");
+			session.setAttribute("Userattendance", "Attendance Submited");
+			response.sendRedirect("Admin/UserList.jsp");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

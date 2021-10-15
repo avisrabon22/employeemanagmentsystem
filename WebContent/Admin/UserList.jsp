@@ -29,7 +29,17 @@
 		href="http://localhost:8080/employeemanagementsystem/Admin/Signup.jsp"
 		class="nav-link">Add User</a>
 	<h1 class="text-center">User List</h1>
+	<%String userAttend=(String)session.getAttribute("Userattendance");
+	if(userAttend!=null){
+	%>
+	<h1><%=userAttend%></h1>
+<%}session.removeAttribute("Userattendance");%>
 
+<%String userUpdate=(String)session.getAttribute("updateUsers");
+if(userUpdate!=null){
+%>
+<p class="text-center text-success"><%=userUpdate%></p>
+<%session.removeAttribute("updateUsers");}%>
 	<%-- 	<%
 String emptyList=(String)session.getAttribute("UserListEmpty");
 if(UserList==null){

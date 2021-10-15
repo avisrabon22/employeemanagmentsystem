@@ -14,7 +14,7 @@ import com.employeemanagementsystem.model.Admin.SignUpModel;
 public class UploadAttandanceDao {
 	private Connection connect = Dbconnection.getconnect();
 	String ListUserForAttandance = "select id,fullname from users where id=?";
-	String insertAttandance = "insert into attendance values(default,?,?,?)";
+	String insertAttandance = "insert into attendance values(default,?,?,?,?)";
 	
 
 	SignUpModel users = new SignUpModel();
