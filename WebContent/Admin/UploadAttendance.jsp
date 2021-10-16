@@ -35,29 +35,29 @@
 			method="post">
 
 
-			<div>
+			<div class="mb-1">
 				ID<input readonly name="ID" type="text"
 					value="<%=userAttandance.getID()%>" placeholder="" class="m-1">
 			</div>
-			<div>
+			<div class="mb-1">
 				Name<input readonly name="Name" type="text"
 					value="<%=userAttandance.getFullName()%>" placeholder=""
 					class="m-1">
 			</div>
-			<div>
+			<div class="mb-1">
 				Date<input name="Date" type="text" placeholder="Date"
 					class="m-1">
 			</div>
  			
- 			<div>
+ 			<div class="mb-1">
 				In Time<input name="InTime" type="text" placeholder="In Time"
 					class="m-1">
 			</div>
-			<div>
+			<div class="mb-1">
 				Out Time<input name="OutTime" type="text" placeholder="Out Time"
 					class="m-1">
 			</div>
-			<div>
+			<div class="mb-1">
 				<input name="Status" type="text" placeholder="Status">
 			</div> 
 
