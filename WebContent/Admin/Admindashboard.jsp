@@ -44,11 +44,7 @@
 				class="">Attendance</a>
 		</div>
 
-<div class="m-2">
-			<a
-				href="<%=request.getContextPath()%>/ShiftTimingServlet"
-				class="">Shift Timing</a>
-		</div>
+
 	</div>
 	
 	

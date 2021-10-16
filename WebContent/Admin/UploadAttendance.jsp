@@ -44,14 +44,17 @@
 					value="<%=userAttandance.getFullName()%>" placeholder=""
 					class="m-1">
 			</div>
+			<div>
+				Date<input name="Date" type="text" placeholder="Date"
+					class="m-1">
+			</div>
  			
  			<div>
-				In Time<input name="InTime" type="time" placeholder="In
-				Time"
+				In Time<input name="InTime" type="text" placeholder="In Time"
 					class="m-1">
 			</div>
 			<div>
-				Out Time<input name="OutTime" type="time" placeholder="Out Time"
+				Out Time<input name="OutTime" type="text" placeholder="Out Time"
 					class="m-1">
 			</div>
 			<div>

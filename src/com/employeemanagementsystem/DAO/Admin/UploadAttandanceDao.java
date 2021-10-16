@@ -14,7 +14,7 @@ import com.employeemanagementsystem.model.Admin.SignUpModel;
 public class UploadAttandanceDao {
 	private Connection connect = Dbconnection.getconnect();
 	String ListUserForAttandance = "select id,fullname from users where id=?";
-	String insertAttandance = "insert into attendance values(default,?,?,?,?)";
+	String insertAttandance = "insert into attendance values(default,?,?,?,?,?)";
 	
 
 	SignUpModel users = new SignUpModel();
@@ -43,10 +43,12 @@ public class UploadAttandanceDao {
 
 	public void insertAttandance(AttandanceModel attandanceModel) throws SQLException {
 		PreparedStatement ps = connect.prepareStatement(insertAttandance);
-		ps.setString(1, attandanceModel.getInTime());
-		ps.setString(2, attandanceModel.getOutTime());
-		ps.setString(3, attandanceModel.getStatus());
-		ps.setInt(4, attandanceModel.getID());
+		ps.setString(1, attandanceModel.getDate());
+		ps.setString(2, attandanceModel.getInTime());
+		ps.setString(3, attandanceModel.getOutTime());
+		ps.setString(4, attandanceModel.getStatus());
+		ps.setInt(5, attandanceModel.getID());
+		
 		ps.executeUpdate();
 		ps.close();
 		System.out.println("In DAo");
