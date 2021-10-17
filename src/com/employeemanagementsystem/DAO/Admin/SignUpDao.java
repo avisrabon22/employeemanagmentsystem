@@ -19,7 +19,7 @@ public class SignUpDao {
 //	SQL Commands @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	private static final String insert_user = "insert into users values(default,?,?,?,?,?,?)";
 	private static final String find_user = "select * from users where id=?";
-	private static final String update_user="update users set FullName=?,username=?,pass=?,gender=?,_Role=?,contactnumber=? where id=?;";
+	private static final String update_user="update users set FullName=?,username=?,pass=?,gender=?,_Role=?,contactnumber=? where id=?";
 
 // DB connection#####################################################################	
 	static private Connection dbconnect = Dbconnection.getconnect();

@@ -32,7 +32,7 @@
 	<%String userAttend=(String)session.getAttribute("Userattendance");
 	if(userAttend!=null){
 	%>
-	<h1><%=userAttend%></h1>
+	<p class="text-center text-success"><%=userAttend%></p>
 <%}session.removeAttribute("Userattendance");%>
 
 <%String userUpdate=(String)session.getAttribute("updateUsers");

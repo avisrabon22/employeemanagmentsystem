@@ -28,6 +28,10 @@ public class MainAttendanceServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		System.out.println("In attendance get");
+		
+		
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

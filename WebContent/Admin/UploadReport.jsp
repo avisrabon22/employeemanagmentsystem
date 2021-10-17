@@ -71,7 +71,7 @@
 		<%
 		if (Report != null) {
 		%>
-		<table class="table border">
+		<table class="table table-bordered">
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -87,6 +87,8 @@
 				for (ShowReportModel report : Report) {
 				%>
 				<tr>
+					<td></td>
+					<td></td>
 					<td><%=report.getLogintime()%></td>
 					<td><%=report.getLogouttime()%></td>
 					<td><%=report.getWorkingtime()%></td>
@@ -99,6 +101,7 @@
 		</table>
 		<%
 		session.removeAttribute("Report");
+		
 		}
 		%>
 	</div>

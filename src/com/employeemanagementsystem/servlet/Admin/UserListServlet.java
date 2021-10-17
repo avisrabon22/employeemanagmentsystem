@@ -74,7 +74,7 @@ public class UserListServlet extends HttpServlet {
 		users.deleteUser(userID);
 //		System.out.println("In delete function");
 //		userList(request,response);
-		response.sendRedirect("Admin/UserList.jsp");
+		response.sendRedirect("UserListServlet");
 	
 //				RequestDispatcher dispatch = request.getRequestDispatcher("Admin/UserList.jsp");
 //				dispatch.forward(request, response);

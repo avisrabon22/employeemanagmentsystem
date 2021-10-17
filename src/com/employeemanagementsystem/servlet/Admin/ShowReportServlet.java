@@ -29,7 +29,7 @@ public class ShowReportServlet extends HttpServlet {
 		try {
 			List<ShowReportModel> Report = showReport.getReport();
 			if (Report == null) {
-				session.setAttribute("noReport", "No Report");;
+				session.setAttribute("noReport", "No Report!");;
 				response.sendRedirect("Admin/UploadReport.jsp");
 			} else if (Report != null) {
 				session.setAttribute("Report", Report);
