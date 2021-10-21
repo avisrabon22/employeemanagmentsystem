@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.employeemanagementsystem.DAO.Admin.ShowReportDao;
-import com.employeemanagementsystem.model.Admin.ShowReportModel;
+import com.employeemanagementsystem.DAO.ReportDao;
+import com.employeemanagementsystem.model.ReportModel;
+
 
 @WebServlet("/ReportServlet")
 public class ReportServlet extends HttpServlet {
@@ -29,15 +30,15 @@ public class ReportServlet extends HttpServlet {
 	HttpSession session=request.getSession();
 //		System.out.println("In Report");
 		
-		ShowReportDao forUsers=new ShowReportDao();
-		try {
-			List<ShowReportModel> userReport=forUsers.getReport();
-			session.setAttribute("userReport", userReport);
-			response.sendRedirect("Report.jsp");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	ReportDao forUsers=new ReportDao();
+	try {
+		ReportModel userReport=forUsers.getReport();
+		session.setAttribute("userReport", userReport);
+		response.sendRedirect("Report.jsp");
+	}
+	catch(Exception e) {
+		e.printStackTrace();
+	}
 		
 		
 		
