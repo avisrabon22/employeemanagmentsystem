@@ -1,5 +1,4 @@
-<%@page
-	import="com.employeemanagementsystem.model.Admin.ShowReportModel"%>
+<%@page import="com.employeemanagementsystem.model.ReportModel"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -27,7 +26,7 @@
 
 	<h1 class="text-center">REPORT</h1>
 	<%
-	List<ShowReportModel> userReport = (List<ShowReportModel>) session.getAttribute("userReport");
+	List<ReportModel> userReport = (List<ReportModel>) session.getAttribute("userReport");
 	%>
 	<div>
 		<table class="table table-bordered ">
@@ -35,29 +34,25 @@
 				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">Name</th>
-					<th scope="col">Designation</th>
-					<th scope="col">Salary</th>
+					<th scope="col">In Time</th>
+					<th scope="col">Out Time</th>
+					<th scope="col">Status</th>
 				</tr>
 			</thead>
 
 			<tbody>
-				<%
-				for (ShowReportModel usersReport : userReport) {
+				<%-- <%
+				for (ReportModel usersReport : userReport) {
 				%>
 				<tr>
-					<td><%=usersReport.getID()%></td>
-
-
-					<td><%=usersReport.getName()%></td>
-
-
-					<td><%=usersReport.getDesignation()%></td>
-
-					<td><%=usersReport.getSalary()%></td>
+					<td><%=%></td>
+					<td><%=%></td>
+					<td><%=%></td>
+					<td><%=%></td>
 				</tr>
 				<%
 				}
-				%>
+				%> --%>
 			</tbody>
 
 		</table>
