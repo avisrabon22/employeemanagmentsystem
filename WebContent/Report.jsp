@@ -34,25 +34,30 @@
 				<tr>
 					<th scope="col">ID</th>
 					<th scope="col">Name</th>
+					<th scope="col">Date</th>
 					<th scope="col">In Time</th>
 					<th scope="col">Out Time</th>
-					<th scope="col">Status</th>
+					<th scope="col">Working Time</th>
 				</tr>
 			</thead>
 
 			<tbody>
-				<%-- <%
-				for (ReportModel usersReport : userReport) {
+				<%
+				if (userReport != null) {
+					for (ReportModel usersReport : userReport) {
 				%>
 				<tr>
-					<td><%=%></td>
-					<td><%=%></td>
-					<td><%=%></td>
-					<td><%=%></td>
+					<td><%=usersReport.getId()%></td>
+					<td><%=usersReport.getName()%></td>
+					<td><%=usersReport.getDate()%></td>
+					<td><%=usersReport.getInTime()%></td>
+					<td><%=usersReport.getOutTime()%></td>
+					<td><%=usersReport.getStatus()%></td>
 				</tr>
 				<%
 				}
-				%> --%>
+				}
+				%>
 			</tbody>
 
 		</table>

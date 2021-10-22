@@ -32,7 +32,7 @@ public class ReportServlet extends HttpServlet {
 		
 	ReportDao forUsers=new ReportDao();
 	try {
-		ReportModel userReport=forUsers.getReport();
+		List<ReportModel> userReport=forUsers.getReport();
 		session.setAttribute("userReport", userReport);
 		response.sendRedirect("Report.jsp");
 	}

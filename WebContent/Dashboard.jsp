@@ -29,7 +29,7 @@
 	</div>
 
 	<div class="m-1">
-		<a href="http://localhost:8080/employeemanagementsystem/Attendance.jsp">Attendance</a>
+		<a href="<%=request.getContextPath()%>/AttendanceServlet">Attendance</a>
 	</div>
 
 	<div class="m-1">
