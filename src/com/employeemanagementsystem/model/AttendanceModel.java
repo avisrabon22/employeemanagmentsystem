@@ -2,7 +2,7 @@ package com.employeemanagementsystem.model;
 
 public class AttendanceModel {
 int id;
-String date,intime,outtime,status;
+String date,intime,outtime,status,name;
 public AttendanceModel() {
 	super();
 	// TODO Auto-generated constructor stub
@@ -12,6 +12,14 @@ public int getId() {
 }
 public void setId(int id) {
 	this.id = id;
+}
+
+
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
 }
 public String getDate() {
 	return date;

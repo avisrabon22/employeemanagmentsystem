@@ -29,10 +29,10 @@ public class AttendanceServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
 		AttendanceDao forAttendance=new AttendanceDao();
-	
+	String username=(String)request.getAttribute("username");
 			List<AttendanceModel> userAttendance =new ArrayList<AttendanceModel>();
 			try {
-				userAttendance =forAttendance.getAttendance();
+				userAttendance =forAttendance.getAttendance(username);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
