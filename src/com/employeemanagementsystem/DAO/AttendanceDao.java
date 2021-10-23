@@ -11,18 +11,15 @@ import com.employeemanagementsystem.model.AttendanceModel;
 
 public class AttendanceDao {
 
-	public  List<AttendanceModel> getAttendance(String username) throws SQLException {
+	public  List<AttendanceModel> getAttendance() throws SQLException {
 		List<AttendanceModel> attendance=new ArrayList<AttendanceModel>();
 		Connection con=Dbconnection.getconnect();
-		String attendace="select * from attendance where username=?";
+		String attendace="select date,intime,outtime,_status from attendance";
 		AttendanceModel getAttendance=new AttendanceModel();
 		PreparedStatement ps=con.prepareStatement(attendace);
 		ResultSet rs=ps.executeQuery();
-		rs.getString(username);
-		 getAttendance.setId(rs.getInt("id"));
-         getAttendance.setName(rs.getString("name"));
+//		rs.getString(username);
 		while(rs.next()) {
-			
 			getAttendance=new AttendanceModel();
                 getAttendance.setDate(rs.getString("date"));
                 getAttendance.setIntime(rs.getString("intime"));

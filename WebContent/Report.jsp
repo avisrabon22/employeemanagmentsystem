@@ -35,8 +35,8 @@
 					<th scope="col">ID</th>
 					<th scope="col">Name</th>
 					<th scope="col">Date</th>
-					<th scope="col">In Time</th>
-					<th scope="col">Out Time</th>
+					<th scope="col">Login Time</th>
+					<th scope="col">Logout Time</th>
 					<th scope="col">Working Time</th>
 				</tr>
 			</thead>

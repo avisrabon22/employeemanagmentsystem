@@ -32,7 +32,7 @@ public class AttendanceServlet extends HttpServlet {
 	String username=(String)request.getAttribute("username");
 			List<AttendanceModel> userAttendance =new ArrayList<AttendanceModel>();
 			try {
-				userAttendance =forAttendance.getAttendance(username);
+				userAttendance =forAttendance.getAttendance();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
