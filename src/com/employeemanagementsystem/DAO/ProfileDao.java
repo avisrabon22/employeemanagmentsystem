@@ -14,7 +14,7 @@ public class ProfileDao {
 
 	public List<ProfileModel> getProfile(String username) throws SQLException {
 		Connection con = Dbconnection.getconnect();
-		String getProfile = "select fullname,pass,gender,contactnumber from users where username=?";
+		String getProfile = "select id,username,fullname,pass,gender,contactnumber from users where username=?";
         List<ProfileModel> promodel=new ArrayList<ProfileModel>();
 		PreparedStatement ps = con.prepareStatement(getProfile);
 		
@@ -22,6 +22,8 @@ public class ProfileDao {
 		ResultSet rs = ps.executeQuery();
 		while (rs.next()) {
        ProfileModel model=new ProfileModel();
+       model.setID(rs.getInt("id"));
+       model.setUsername(rs.getString("username"));
        model.setFname(rs.getString("Fullname"));
        model.setPassword(rs.getString("pass"));
        model.setGender(rs.getString("gender"));

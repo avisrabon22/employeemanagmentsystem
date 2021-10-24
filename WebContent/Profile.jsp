@@ -21,27 +21,46 @@
 	}
 	%>
 
-<%List<ProfileModel> profile=(List<ProfileModel>)session.getAttribute("profile");
-if(profile!=null){
-%>
+	<%
+	List<ProfileModel> profile = (List<ProfileModel>) session.getAttribute("profile");
+	if (profile != null) {
+	%>
 	<h1 class="text-center">Profile</h1>
-	<%for(ProfileModel profileModel:profile){%>
+	<%
+	for (ProfileModel profileModel : profile) {
+	%>
 	<div class="text-center">
-		<form action="<%=request.getContextPath()%>profileservlet" method="post">
+		<form action="<%=request.getContextPath()%>profileservlet"
+			method="post">
 			<div class="m-1">
-				<label class="m-1">Name: </label><input type="text" value="<%=profileModel.getFname()%>" readonly/>
+				<label class="m-1">ID: </label><input type="text"
+					value="<%=profileModel.getID()%>" readonly />
 			</div>
 			<div class="m-1">
-				<label class="m-1">Password: </label><input type="password" value="<%=profileModel.getPassword()%>" readonly/>
+				<label class="m-1">Name: </label><input type="text"
+					value="<%=profileModel.getFname()%>" readonly />
 			</div>
 			<div class="m-1">
-				<label class="m-1">Gender: </label><input type="text" value="<%=profileModel.getGender()%>" readonly/>
+				<label class="m-1">Username: </label><input type="text"
+					value="<%=profileModel.getUsername()%>" readonly />
 			</div>
 			<div class="m-1">
-				<label class="m-1">Contact Number: </label><input type="text" value="<%=profileModel.getContactnumber()%>" readonly/>
+				<label class="m-1">Password: </label><input type="password"
+					value="<%=profileModel.getPassword()%>" readonly />
+			</div>
+			<div class="m-1">
+				<label class="m-1">Gender: </label><input type="text"
+					value="<%=profileModel.getGender()%>" readonly />
+			</div>
+			<div class="m-1">
+				<label class="m-1">Contact Number: </label><input type="text"
+					value="<%=profileModel.getContactnumber()%>" readonly />
 			</div>
 		</form>
 	</div>
-	<%}}%>
+	<%
+	}
+	}
+	%>
 </body>
 </html>
