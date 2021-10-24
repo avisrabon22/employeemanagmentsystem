@@ -72,23 +72,23 @@ if(UserList==null){
 			</tr>
 			<%
 			} else
-			for (SignUpModel user : users) {
+			for (SignUpModel use : users) {
 			%>
 			<tbody>
 				<tr class="text-center">
-					<td><%=user.getID()%></td>
-					<td><%=user.getFullName()%></td>
-					<td><%=user.getUsername()%></td>
-					<td><%=user.getPassword()%></td>
-					<td><%=user.getGender()%></td>
-					<td><%=user.getRole()%></td>
-					<td><%=user.getContactNumber()%></td>
+					<td><%=use.getID()%></td>
+					<td><%=use.getFullName()%></td>
+					<td><%=use.getUsername()%></td>
+					<td><%=use.getPassword()%></td>
+					<td><%=use.getGender()%></td>
+					<td><%=use.getRole()%></td>
+					<td><%=use.getContactNumber()%></td>
 					<td><a
-						href="<%=request.getContextPath()%>/SignupServlet?edit_user=<%=user.getID()%>">Edit</a>
+						href="<%=request.getContextPath()%>/SignupServlet?edit_user=<%=use.getID()%>">Edit</a>
 					<td><a
-						href="<%=request.getContextPath()%>/UserListServlet?delete_user=<%=user.getID()%>">Delete</a></td>
+						href="<%=request.getContextPath()%>/UserListServlet?delete_user=<%=use.getID()%>">Delete</a></td>
 					<td><a
-						href="<%=request.getContextPath()%>/UploadAttendanceServlet?mark_attendance=<%=user.getID()%>">Mark
+						href="<%=request.getContextPath()%>/UploadAttendanceServlet?mark_attendance=<%=use.getID()%>">Mark
 							Attendance</a></td>
 				</tr>
 				<%
