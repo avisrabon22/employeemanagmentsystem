@@ -1,18 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container-fluid">
-	<%
-				if (request.getSession(false).getAttribute("USER") != null) {
-				%>
-				<a class="navbar-brand">Employee Portal</a>
-				<%
-				} else if(request.getSession(false).getAttribute("ADMIN") != null) {
-				%>
-				<a class="navbar-brand">Admin Portal</a>
-				<%
-				}
-				%>
-		
-		
+		<%
+		if (request.getSession(false).getAttribute("USER") != null) {
+		%>
+		<a class="navbar-brand">Employee Portal</a>
+		<%
+		} else if (request.getSession(false).getAttribute("ADMIN") != null) {
+		%>
+		<a class="navbar-brand">Admin Portal</a>
+		<%
+		}
+		%>
+
+
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 			data-bs-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -27,15 +27,28 @@
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="Dashboard.jsp">Dashboard</a></li>
 				<%
-				} else if(request.getSession(false).getAttribute("ADMIN") != null) {
+				} else if (request.getSession(false).getAttribute("ADMIN") != null) {
 				%>
 				<li class="nav-item "><a class="nav-link active text-primary"
-					aria-current="page" href="Admindashboard.jsp">Admin
-						Dashboard</a></li>
+					aria-current="page" href="Admindashboard.jsp">Admin Dashboard</a></li>
 				<%
 				}
 				%>
 			</ul>
+			<%
+			String user = (String) request.getSession(false).getAttribute("USER");
+			String admin = (String) request.getSession(false).getAttribute("ADMIN");
+			if (user != null) {
+			%>
+			<span class="m-1 text-success"><%=user%></span>
+			<%
+			} else {
+			%>
+			<span class="m-1 text-success"><%=admin%></span>
+			<%
+			}
+			%>
+
 			<form action="<%=request.getContextPath()%>/LogoutServlet">
 				<input type="submit" value="Logout" />
 			</form>
