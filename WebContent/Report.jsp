@@ -13,7 +13,6 @@
 <%@ include file="Allcomp/navbar.jsp"%>
 </head>
 
-
 <body>
 	<%
 	response.setHeader("cache-control", "no-cache,no-store,must-revalidate");
