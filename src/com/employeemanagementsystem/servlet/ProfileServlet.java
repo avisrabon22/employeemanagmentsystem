@@ -27,10 +27,23 @@ public class ProfileServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		if(session.getAttribute("USER")!=null)
+		getProfile(request,response);
+		else if(session.getAttribute("EDIT")!=null)
+			System.out.print("On Edit");
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
+
+	protected void getProfile(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession();
 		ProfileDao profiledao = new ProfileDao();
 		// System.out.println("In");
 		String username = (String) session.getAttribute("USER");
-
 		try {
 			List<ProfileModel> profile = profiledao.getProfile(username);
 			session.setAttribute("profile", profile);
@@ -39,11 +52,12 @@ public class ProfileServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+//End######################################################################################################
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
 
-	}
-
+	
+	
+	
+//End*******************************************************************************************************************************************
 }

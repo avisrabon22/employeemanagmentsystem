@@ -27,21 +27,19 @@ if(profile!=null){
 	<h1 class="text-center">Profile</h1>
 	<%for(ProfileModel profileModel:profile){%>
 	<div class="text-center">
-		<form action="" method="post">
+		<form action="<%=request.getContextPath()%>profileservlet" method="post">
 			<div class="m-1">
-				<label>Name: </label><input type="text" value="<%=profileModel.getFname()%>" readonly/>
+				<label class="m-1">Name: </label><input type="text" value="<%=profileModel.getFname()%>" readonly/>
 			</div>
 			<div class="m-1">
-				<label>Password: </label><input type="text" value="<%=profileModel.getPassword()%>" readonly/>
+				<label class="m-1">Password: </label><input type="password" value="<%=profileModel.getPassword()%>" readonly/>
 			</div>
 			<div class="m-1">
-				<label>Gender: </label><input type="text" value="<%=profileModel.getGender()%>" readonly/>
+				<label class="m-1">Gender: </label><input type="text" value="<%=profileModel.getGender()%>" readonly/>
 			</div>
 			<div class="m-1">
-				<label>Contact Number: </label><input type="text" value="<%=profileModel.getContactnumber()%>" readonly/>
+				<label class="m-1">Contact Number: </label><input type="text" value="<%=profileModel.getContactnumber()%>" readonly/>
 			</div>
-			<input class="m-1" type="submit" value="Submit" /><input type="button"
-				value="  Edit  " />
 		</form>
 	</div>
 	<%}}%>

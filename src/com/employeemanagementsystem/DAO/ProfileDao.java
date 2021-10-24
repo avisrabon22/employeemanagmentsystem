@@ -17,8 +17,9 @@ public class ProfileDao {
 		String getProfile = "select fullname,pass,gender,contactnumber from users where username=?";
         List<ProfileModel> promodel=new ArrayList<ProfileModel>();
 		PreparedStatement ps = con.prepareStatement(getProfile);
+		
+		ps.setString(1, username);
 		ResultSet rs = ps.executeQuery();
-		rs.getString(username);
 		while (rs.next()) {
        ProfileModel model=new ProfileModel();
        model.setFname(rs.getString("Fullname"));
