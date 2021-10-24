@@ -40,11 +40,11 @@
 			String admin = (String) request.getSession(false).getAttribute("ADMIN");
 			if (user != null) {
 			%>
-			<span class="m-1"><%=user%></span>
+			<span class="m-1 text-success"><%=user%></span>
 			<%
 			} else {
 			%>
-			<span class="m-1"><%=admin%></span>
+			<span class="m-1 text-success"><%=admin%></span>
 			<%
 			}
 			%>

@@ -33,7 +33,7 @@
 	</div>
 
 	<div class="m-1">
-		<a href="http://localhost:8080/employeemanagementsystem/Profile.jsp">Profile</a>
+		<a href="<%=request.getContextPath()%>/ProfileServlet">Profile</a>
 	</div>
 
 	<div class="m-1">
