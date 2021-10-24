@@ -1,3 +1,5 @@
+<%@page import="com.employeemanagementsystem.model.AttendanceModel"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -18,21 +20,43 @@
 		response.sendRedirect("Login.jsp");
 	}
 	%>
-
-
+<!--*******************************************************************************************************************  -->
+	<%
+	List<AttendanceModel> attendance = (List<AttendanceModel>) session.getAttribute("userAttendance");
+	%>
 	<h1 class="text-center">Attendance</h1>
-<table class="table border">
-<thead>
-<tr><th>ID</th> <th>Name</th><th>Name </th><th>Name</th></tr>
+	
+	<%
+	if (attendance != null) {
+	%>
+	<table class="table border">
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>In Time</th>
+				<th>Out Time</th>
+				<th>Status</th>
 
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
+			</tr>
+		</thead>
+		<tbody>
+	<%for (AttendanceModel userattendance : attendance) {%>
+		<tr>
+		<td><%=userattendance.getDate()%></td>
+		<td><%=userattendance.getIntime()%></td>
+		<td><%=userattendance.getOuttime()%></td>
+		<td><%=userattendance.getStatus()%></td>
+		</tr>
+		
+		
+		</tbody>
+	</table>
 
-</tbody>
-</table>
+	<%
+	}
+	}
+	%>
+	<div></div>
 
 
 

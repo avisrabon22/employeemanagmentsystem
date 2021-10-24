@@ -25,15 +25,15 @@
 
 
 	<div class="m-1">
-		<a href="http://localhost:8080/employeemanagementsystem/Report.jsp">Reports</a>
+		<a href="<%=request.getContextPath()%>/ReportServlet">Reports</a>
 	</div>
 
 	<div class="m-1">
-		<a href="http://localhost:8080/employeemanagementsystem/Attendance.jsp">Attendance</a>
+		<a href="<%=request.getContextPath()%>/AttendanceServlet">Attendance</a>
 	</div>
 
 	<div class="m-1">
-		<a href="http://localhost:8080/employeemanagementsystem/Profile.jsp">Profile</a>
+		<a href="<%=request.getContextPath()%>/ProfileServlet">Profile</a>
 	</div>
 
 	<div class="m-1">
