@@ -31,7 +31,6 @@
 		<div class="m-2">
 			<a href="<%=request.getContextPath()%>/UserListServlet" class="">Users</a>
 		</div>
-
 		<div class="m-2">
 			<a
 				href="http://localhost:8080/employeemanagementsystem/Admin/UploadReport.jsp"
