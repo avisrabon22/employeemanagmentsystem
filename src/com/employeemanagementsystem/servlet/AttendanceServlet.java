@@ -10,11 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import com.employeemanagementsystem.DAO.AttendanceDao;
-import com.employeemanagementsystem.DAO.ReportDao;
 import com.employeemanagementsystem.model.AttendanceModel;
-import com.employeemanagementsystem.model.ReportModel;
+
 
 @WebServlet("/AttendanceServlet")
 public class AttendanceServlet extends HttpServlet {

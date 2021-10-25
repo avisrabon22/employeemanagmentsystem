@@ -1,6 +1,7 @@
 package com.employeemanagementsystem.servlet.Admin;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,17 @@ public class SignupServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session=request.getSession();
+		SignUpDao Signup=new SignUpDao();
+		int editID=Integer.parseInt(request.getParameter("edit_user"));
+		try {
+			List<SignUpModel>findUserForUpdate=Signup.editUser(editID);
+			session.setAttribute("userUpdateData", findUserForUpdate);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,7 +51,8 @@ public class SignupServlet extends HttpServlet {
 		String contactnumber=(String)request.getParameter("contactnumber");
 		SignUpModel signupList=new SignUpModel(Fname,username,password,gender,role,contactnumber); 
 		Signup.SignUp(signupList);
-		response.sendRedirect("UserlistServlet");
+		session.setAttribute("UserAdded", "User added successfully !");
+		response.sendRedirect("Admin/Signup.jsp");
 	}
 
 }
