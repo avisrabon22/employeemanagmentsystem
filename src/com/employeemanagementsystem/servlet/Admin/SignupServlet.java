@@ -31,6 +31,7 @@ public class SignupServlet extends HttpServlet {
 		try {
 			List<SignUpModel>findUserForUpdate=Signup.editUser(editID);
 			session.setAttribute("userUpdateData", findUserForUpdate);
+			response.sendRedirect("Admin/Signup.jsp");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

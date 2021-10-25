@@ -72,8 +72,7 @@
 					value="<%=updates.getContactNumber()%>" />
 			</div>
 			<!--****************************************************************************************  -->
-			<input type="submit" value="UPDATE" class="m-1" /><input
-				type="reset" value="RESET" class="m-1" />
+			<input type="submit" value="UPDATE" class="m-1" />
 		</form>
 		<%
 		}
