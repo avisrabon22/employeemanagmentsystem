@@ -14,7 +14,6 @@ public class UploadReportServlet extends HttpServlet {
        
     public UploadReportServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
