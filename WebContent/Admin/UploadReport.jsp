@@ -30,7 +30,7 @@
 	<div class="text-center">
 		<h1 class="text-center">Upload Report</h1>
 		<!--*************************Upload file**************************************************-->
-		<form action="<%=request.getContextPath()%>/UploadReport"
+		<form action="<%=request.getContextPath()%>/UploadReportServlet"
 			method="post" enctype="multipart/form-data">
 			<div>
 				<input type="file" name="uploadfile" accept=".xls,.xlsx" />
@@ -76,6 +76,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Name</th>
+					<th>Date</th>
 					<th>Login Time</th>
 					<th>Logout Time</th>
 					<th>Working Time</th>
@@ -87,8 +88,9 @@
 				for (ShowReportModel report : Report) {
 				%>
 				<tr>
-					<td></td>
-					<td></td>
+					<td><%=report.getId()%></td>
+					<td><%=report.getName()%></td>
+					<td><%=report.getDate()%></td>
 					<td><%=report.getLogintime()%></td>
 					<td><%=report.getLogouttime()%></td>
 					<td><%=report.getWorkingtime()%></td>

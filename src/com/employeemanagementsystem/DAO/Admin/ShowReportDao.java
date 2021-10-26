@@ -24,6 +24,9 @@ public class ShowReportDao {
 //*******************************************************************
 		while (rs.next()) {
 			ShowReportModel showReport = new ShowReportModel();
+			showReport.setId(rs.getInt("id"));
+			showReport.setName(rs.getString("name"));
+			showReport.setDate(rs.getString("date"));
 			showReport.setLogintime(rs.getString("logintime"));
 			showReport.setLogouttime(rs.getString("logouttime"));
 			showReport.setWorkingtime(rs.getString("workingtime"));

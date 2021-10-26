@@ -1,20 +1,63 @@
 package com.employeemanagementsystem.model.Admin;
 
 public class ShowReportModel {
-	String logintime;
-	private String logouttime,workingtime;
+	int id;
+	private String name,date, logintime,logouttime,workingtime;
 
 	public ShowReportModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ShowReportModel(String logintime, String logouttime, String workingtime) {
+	
+
+	public ShowReportModel(int id,String name, String date, String logintime, String logouttime, String workingtime) {
 		super();
+		this.id = id;
+		this.name = name;
+		this.date = date;
 		this.logintime = logintime;
 		this.logouttime = logouttime;
 		this.workingtime = workingtime;
 	}
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public String getDate() {
+		return date;
+	}
+
+
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+
 
 	public String getLogintime() {
 		return logintime;
