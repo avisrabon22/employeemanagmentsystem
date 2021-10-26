@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/UploadReport")
-public class UploadReport extends HttpServlet {
+@WebServlet("/UploadReportServlet")
+public class UploadReportServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public UploadReport() {
+    public UploadReportServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -23,6 +23,9 @@ public class UploadReport extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		
+		
 		
 	}
 
