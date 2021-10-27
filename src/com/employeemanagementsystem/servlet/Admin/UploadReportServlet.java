@@ -53,7 +53,7 @@ public class UploadReportServlet extends HttpServlet {
 			session.setAttribute("uploadDone", "File uploaded !");
 			response.sendRedirect("Admin/UploadReport.jsp");
 			System.out.print("The file uploaded sucessfully.");
-		} else {
+		} else if(fileName==null){
 			session.setAttribute("uploadfile", "Please upload the file");
 			response.sendRedirect("Admin/UploadReport.jsp");
 		}
