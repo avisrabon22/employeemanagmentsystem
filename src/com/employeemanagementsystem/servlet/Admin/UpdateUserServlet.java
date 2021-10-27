@@ -50,7 +50,7 @@ public class UpdateUserServlet extends HttpServlet {
 		SignUpDao userUpdateNew = new SignUpDao();
 		userUpdateNew.updateUserDBs(userUpdate);
 		session.setAttribute("updateUsers", "User updated!");
-		response.sendRedirect("Admin/UserList.jsp");
+		response.sendRedirect("UserListServlet");
 	}
 
 	

@@ -57,17 +57,30 @@ public class UploadReportDao {
 
 				switch (IndexCell) {
 				case 0:
-					double logintime = cellData.getNumericCellValue();
-					ps.setLong(1, (long) logintime);
+				int id= (int) cellData.getNumericCellValue();
+					ps.setInt(1,id);
 					break;
 				case 1:
-					 double logouttime = cellData.getNumericCellValue();
-					ps.setLong(2, (long) logouttime);
+					 String name = cellData.getStringCellValue();
+					ps.setString(2,name);
 					break;
 				case 2:
-					double workingtime = cellData.getNumericCellValue();
-					ps.setLong(3, (long) workingtime);
-				
+					 String date = cellData.getStringCellValue();
+					ps.setString(3,date);
+					break;
+				case 3:
+					String logintime = cellData.getStringCellValue();
+					ps.setString(4,logintime);
+					break;
+				case 4:
+					String logouttime = cellData.getStringCellValue();
+					ps.setString(5,logouttime);
+					break;
+				case 5:
+					String workingtime = cellData.getStringCellValue();
+					ps.setString(6,workingtime);
+					break;
+					
 				}
 			}
 			ps.executeUpdate();}
