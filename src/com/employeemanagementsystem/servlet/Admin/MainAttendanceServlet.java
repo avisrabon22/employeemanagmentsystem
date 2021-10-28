@@ -28,7 +28,10 @@ public class MainAttendanceServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("In attendance get");
+		
+		
+		
+//		System.out.println("In attendance get");
 		
 		
 		
@@ -43,14 +46,17 @@ public class MainAttendanceServlet extends HttpServlet {
 //	Post function************************************
 	protected void insertAttendance(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession();
+		int ID=Integer.parseInt(request.getParameter("ID"));
+		String name=request.getParameter("Name");
+		String username=request.getParameter("Username");
 		String Date=request.getParameter("Date");
 		String InTime=(String)request.getParameter("InTime");
 		String OutTime=(String)request.getParameter("OutTime");
 		String Status=(String)request.getParameter("Status");
-		int ID=Integer.parseInt(request.getParameter("ID"));
-        AttandanceModel insertAttendance=new AttandanceModel(Date,InTime, OutTime, Status,ID);
+		
+        AttandanceModel insertAttendance=new AttandanceModel(ID,name,username,Date,InTime, OutTime, Status);
         UploadAttandanceDao AttendaceInsert = new UploadAttandanceDao();
-        System.out.println(ID);
+//        System.out.println(ID);
         try {
 			AttendaceInsert.insertAttandance(insertAttendance);
 			session.setAttribute("Userattendance", "Attendance Submited");

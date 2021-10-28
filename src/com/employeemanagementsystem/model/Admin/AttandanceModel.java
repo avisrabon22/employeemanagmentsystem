@@ -3,31 +3,58 @@ package com.employeemanagementsystem.model.Admin;
 //import java.sql.Time;
 
 public class AttandanceModel {
-	private int TimeId;
+	private int ID;
+	private String name;
+	private String username;
 	private String Date;
 	private String InTime;
 	private String OutTime;
 	private String Status;
-	private int ID;
+	
 //#####################################################################################################
 	
 	public AttandanceModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-//****************************************************************************************************
-	public AttandanceModel(String date,String inTime, String outTime, String status, int ID) {
+
+//***************************************************************************************************
+	public AttandanceModel(int iD, String name, String username, String date, String inTime, String outTime,
+			String status) {
 		super();
-		Date=date;
+		ID = iD;
+		this.name = name;
+		this.username = username;
+		Date = date;
 		InTime = inTime;
 		OutTime = outTime;
 		Status = status;
-
 	}
-//***************************************************************************************************
-	public AttandanceModel(int timeId) {
-		super();
-		TimeId = timeId;
+//	***************************************************************************************************
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getDate() {
@@ -38,13 +65,7 @@ public class AttandanceModel {
 		Date = date;
 	}
 	
-	public int getTimeId() {
-		return TimeId;
-	}
-
-	public void setTimeId(int timeId) {
-		TimeId = timeId;
-	}
+	
 
 	public String getInTime() {
 		return InTime;
@@ -70,12 +91,6 @@ public class AttandanceModel {
 		Status = c;
 	}
 
-	public int getID() {
-		return ID;
-	}
-
-	public void setID(int iD) {
-		ID = iD;
-	}
+	
 
 }

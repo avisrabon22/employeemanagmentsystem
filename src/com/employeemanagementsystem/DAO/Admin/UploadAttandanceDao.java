@@ -13,12 +13,12 @@ import com.employeemanagementsystem.model.Admin.SignUpModel;
 
 public class UploadAttandanceDao {
 	private Connection connect = Dbconnection.getconnect();
-	private static final String ListUserForAttandance = "select id,fullname from users where id=?";
-	private static final String insertAttandance = "insert into attendance values(default,?,?,?,?,?)";
+	private static final String ListUserForAttandance = "select id,fullname,username from users where id=?";
+	private static final String insertAttandance = "insert into attendance values(?,?,?,?,?,?,?)";
 	
 
 	SignUpModel users = new SignUpModel();
-
+//************************************************************************************************
 	public List<SignUpModel> userListForAttandance(int ID) throws SQLException {
 		List<SignUpModel> listofUsers = new ArrayList<SignUpModel>();
 
@@ -31,6 +31,7 @@ public class UploadAttandanceDao {
 			SignUpModel attandance = new SignUpModel();
 			attandance.setID(rs.getInt("ID"));
 			attandance.setFullName(rs.getString("FullName"));
+			attandance.setUsername(rs.getString("username"));
 			listofUsers.add(attandance);
 		}
 		ps.close();
@@ -41,14 +42,16 @@ public class UploadAttandanceDao {
 		
 	}
 
+//	*************************************************************************************************
 	public void insertAttandance(AttandanceModel attandanceModel) throws SQLException {
 		PreparedStatement ps = connect.prepareStatement(insertAttandance);
-		
-		ps.setString(1, attandanceModel.getDate());
-		ps.setString(2, attandanceModel.getInTime());
-		ps.setString(3, attandanceModel.getOutTime());
-		ps.setString(4, attandanceModel.getStatus());
-		ps.setInt(5, attandanceModel.getID());
+		ps.setInt(1, attandanceModel.getID());
+		ps.setString(2, attandanceModel.getName());
+		ps.setString(3, attandanceModel.getUsername());
+		ps.setString(4, attandanceModel.getDate());
+		ps.setString(5, attandanceModel.getInTime());
+		ps.setString(6, attandanceModel.getOutTime());
+		ps.setString(7, attandanceModel.getStatus());
 		
 		
 		ps.executeUpdate();
