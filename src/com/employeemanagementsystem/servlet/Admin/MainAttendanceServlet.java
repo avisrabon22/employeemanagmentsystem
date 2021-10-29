@@ -2,6 +2,7 @@ package com.employeemanagementsystem.servlet.Admin;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -62,17 +63,14 @@ public class MainAttendanceServlet extends HttpServlet {
 		}
 	}
 
-	protected void showAttendance(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void showAttendance(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, SQLException {
 		HttpSession session = request.getSession();
-request.getParameter("ID");
-request.getParameter("Username");
-request.getParameter("");
-request.getParameter("");
-request.getParameter("");
-request.getParameter("");
-request.getParameter("");
+		String Username = (String) request.getParameter("Username");
+		UploadAttandanceDao showAttendance = new UploadAttandanceDao();
+		List<AttandanceModel> showAttend = showAttendance.showAttendance(Username);
+		session.setAttribute(Username, showAttend);
 		response.sendRedirect("Admin/ShowAttendance.jsp");
-
 	}
 
 	// End

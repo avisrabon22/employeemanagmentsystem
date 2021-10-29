@@ -37,13 +37,13 @@
 		%>
 		<tbody>
 			<tr>
-				<td><input type="text" name="" value="<%=%>" /></td>
-				<td><input type="text" name="" value="<%=%>" /></td>
-				<td><input type="text" name="" value="<%=%>" /></td>
-				<td><input type="text" name="" value="<%=%>" /></td>
-				<td><input type="text" name="" value="<%=%>" /></td>
-				<td><input type="text" name="" value="<%=%>" /></td>
-				<td><input type="text" name="" value="<%=%>" /></td>
+				<td><input type="text" name="ID" value="<%=%>" /></td>
+				<td><input type="text" name="Name" value="<%=%>" /></td>
+				<td><input type="text" name="Username" value="<%=%>" /></td>
+				<td><input type="text" name="Date" value="<%=%>" /></td>
+				<td><input type="text" name="Intime" value="<%=%>" /></td>
+				<td><input type="text" name="Outtime" value="<%=%>" /></td>
+				<td><input type="text" name="Status" value="<%=%>" /></td>
 
 
 
