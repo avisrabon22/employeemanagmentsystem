@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.employeemanagementsystem.dbconnection.Dbconnection;
+import com.employeemanagementsystem.model.AttendanceModel;
 import com.employeemanagementsystem.model.Admin.AttandanceModel;
 import com.employeemanagementsystem.model.Admin.SignUpModel;
 
@@ -15,7 +16,7 @@ public class UploadAttandanceDao {
 	private Connection connect = Dbconnection.getconnect();
 	private static final String ListUserForAttandance = "select id,fullname,username from users where id=?";
 	private static final String insertAttandance = "insert into attendance values(?,?,?,?,?,?,?)";
-	
+	private static final String showAttendance="select * from attendance where username=?";
 
 	SignUpModel users = new SignUpModel();
 //************************************************************************************************
@@ -58,5 +59,38 @@ public class UploadAttandanceDao {
 		ps.close();
 		System.out.println("In DAO");
 	}
+
+
+
+
+public  List<AttendanceModel> showAttendance(String username) throws SQLException {
+	
+	Connection con=Dbconnection.getconnect();
+	PreparedStatement ps=con.prepareStatement(showAttendance);
+	List<AttendanceModel> attendance=new ArrayList<AttendanceModel>();
+	
+	ps.setString(0,username);
+	ResultSet rs=ps.executeQuery();
+	while(rs.next()) {
+		AttendanceModel attendanceShow=new AttendanceModel();
+//		
+//		attendanceShow.;
+//		attendanceShow.
+//		attendanceShow.set
+		
+	}
+	
+	
+	
+	
+	
+	
+	return null;
+}
+
+
+
+
+
 
 }
