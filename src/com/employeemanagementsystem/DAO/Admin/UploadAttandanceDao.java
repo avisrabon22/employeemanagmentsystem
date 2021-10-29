@@ -63,7 +63,7 @@ public class UploadAttandanceDao {
 
 
 
-public  List<AttendanceModel> showAttendance(String username) throws SQLException {
+public  List<AttandanceModel> showAttendance(String username) throws SQLException {
 	
 	Connection con=Dbconnection.getconnect();
 	PreparedStatement ps=con.prepareStatement(showAttendance);
