@@ -6,17 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.employeemanagementsystem.dbconnection.Dbconnection;
-import com.employeemanagementsystem.model.AttendanceModel;
-import com.employeemanagementsystem.model.Admin.AttandanceModel;
+import com.employeemanagementsystem.model.Admin.AttandanceAdminModel;
 import com.employeemanagementsystem.model.Admin.SignUpModel;
 
 public class UploadAttandanceDao {
 	private Connection connect = Dbconnection.getconnect();
 	private static final String ListUserForAttandance = "select id,fullname,username from users where id=?";
 	private static final String insertAttandance = "insert into attendance values(?,?,?,?,?,?,?)";
-	private static final String showAttendance="select * from attendance where username=?";
+	private static final String showAttendance="select * from attendance";
 
 	SignUpModel users = new SignUpModel();
 //************************************************************************************************
@@ -44,15 +42,15 @@ public class UploadAttandanceDao {
 	}
 
 //	*************************************************************************************************
-	public void insertAttandance(AttandanceModel attandanceModel) throws SQLException {
+	public void insertAttandance(AttandanceAdminModel attandanceAdminModel) throws SQLException {
 		PreparedStatement ps = connect.prepareStatement(insertAttandance);
-		ps.setInt(1, attandanceModel.getID());
-		ps.setString(2, attandanceModel.getName());
-		ps.setString(3, attandanceModel.getUsername());
-		ps.setString(4, attandanceModel.getDate());
-		ps.setString(5, attandanceModel.getInTime());
-		ps.setString(6, attandanceModel.getOutTime());
-		ps.setString(7, attandanceModel.getStatus());
+		ps.setInt(1, attandanceAdminModel.getID());
+		ps.setString(2, attandanceAdminModel.getName());
+		ps.setString(3, attandanceAdminModel.getUsername());
+		ps.setString(4, attandanceAdminModel.getDate());
+		ps.setString(5, attandanceAdminModel.getInTime());
+		ps.setString(6, attandanceAdminModel.getOutTime());
+		ps.setString(7, attandanceAdminModel.getStatus());
 		
 		
 		ps.executeUpdate();
@@ -63,29 +61,26 @@ public class UploadAttandanceDao {
 
 
 
-public  List<AttandanceModel> showAttendance(String username) throws SQLException {
+public  List<AttandanceAdminModel> showAttendance() throws SQLException {
 	
 	Connection con=Dbconnection.getconnect();
 	PreparedStatement ps=con.prepareStatement(showAttendance);
-	List<AttendanceModel> attendance=new ArrayList<AttendanceModel>();
+	List<AttandanceAdminModel> attendance=new ArrayList<AttandanceAdminModel>();
 	
-	ps.setString(0,username);
 	ResultSet rs=ps.executeQuery();
 	while(rs.next()) {
-		AttendanceModel attendanceShow=new AttendanceModel();
-//		
-//		attendanceShow.;
-//		attendanceShow.
-//		attendanceShow.set
-		
+		AttandanceAdminModel attendanceShow=new AttandanceAdminModel();
+		attendanceShow.setID(rs.getInt("id"));
+		attendanceShow.setName(rs.getString("name"));
+		attendanceShow.setUsername("username");
+		attendanceShow.setDate(rs.getString("date"));
+		attendanceShow.setInTime(rs.getString("intime"));
+		attendanceShow.setOutTime(rs.getString("outtime"));
+		attendanceShow.setStatus(rs.getString("_status"));
+		attendance.add(attendanceShow);
 	}
 	
-	
-	
-	
-	
-	
-	return null;
+	return attendance;
 }
 
 

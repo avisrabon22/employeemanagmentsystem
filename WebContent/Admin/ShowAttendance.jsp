@@ -1,4 +1,4 @@
-<%@page import="com.employeemanagementsystem.model.AttendanceModel"%>
+<%@page import="com.employeemanagementsystem.model.Admin.AttandanceAdminModel"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -33,21 +33,22 @@
 			</tr>
 		</thead>
 		<%
-		List<AttendanceModel> showAttendance = (List<AttendanceModel>) session.getAttribute("");
+		List<AttandanceAdminModel> showAttendance = (List<AttandanceAdminModel>) session.getAttribute("showAttendace");
+		if(showAttendance!=null){
 		%>
 		<tbody>
+		<% for(AttandanceAdminModel showAttend:showAttendance){%>
 			<tr>
-				<td><input type="text" name="ID" value="<%=%>" /></td>
-				<td><input type="text" name="Name" value="<%=%>" /></td>
-				<td><input type="text" name="Username" value="<%=%>" /></td>
-				<td><input type="text" name="Date" value="<%=%>" /></td>
-				<td><input type="text" name="Intime" value="<%=%>" /></td>
-				<td><input type="text" name="Outtime" value="<%=%>" /></td>
-				<td><input type="text" name="Status" value="<%=%>" /></td>
-
-
+				<td><input type="text" name="ID" value="<%=showAttend.getID()%>" readonly /></td>
+				<td><input type="text" name="Name" value="<%=showAttend.getName()%>" readonly /></td>
+				<td><input type="text" name="Username" value="<%=showAttend.getUsername()%>" readonly /></td>
+				<td><input type="text" name="Date" value="<%=showAttend.getDate()%>" readonly/></td>
+				<td><input type="text" name="Intime" value="<%=showAttend.getInTime()%>" readonly/></td>
+				<td><input type="text" name="Outtime" value="<%=showAttend.getOutTime()%>" readonly/></td>
+				<td><input type="text" name="Status" value="<%=showAttend.getStatus()%>" readonly/></td>
 
 			</tr>
+			<%}} %>
 		</tbody>
 
 

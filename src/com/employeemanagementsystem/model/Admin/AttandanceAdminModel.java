@@ -2,7 +2,7 @@ package com.employeemanagementsystem.model.Admin;
 
 //import java.sql.Time;
 
-public class AttandanceModel {
+public class AttandanceAdminModel {
 	private int ID;
 	private String name;
 	private String username;
@@ -13,13 +13,13 @@ public class AttandanceModel {
 	
 //#####################################################################################################
 	
-	public AttandanceModel() {
+	public AttandanceAdminModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 //***************************************************************************************************
-	public AttandanceModel(int iD, String name, String username, String date, String inTime, String outTime,
+	public AttandanceAdminModel(int iD, String name, String username, String date, String inTime, String outTime,
 			String status) {
 		super();
 		ID = iD;

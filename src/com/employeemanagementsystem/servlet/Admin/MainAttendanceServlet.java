@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.employeemanagementsystem.DAO.Admin.UploadAttandanceDao;
-import com.employeemanagementsystem.model.Admin.AttandanceModel;
+import com.employeemanagementsystem.model.Admin.AttandanceAdminModel;
 
 @WebServlet("/MainAttendanceServlet")
 public class MainAttendanceServlet extends HttpServlet {
@@ -55,7 +55,7 @@ public class MainAttendanceServlet extends HttpServlet {
 		String OutTime = (String) request.getParameter("OutTime");
 		String Status = (String) request.getParameter("Status");
 
-		AttandanceModel insertAttendance = new AttandanceModel(ID, name, username, Date, InTime, OutTime, Status);
+		AttandanceAdminModel insertAttendance = new AttandanceAdminModel(ID, name, username, Date, InTime, OutTime, Status);
 		UploadAttandanceDao AttendaceInsert = new UploadAttandanceDao();
 //        System.out.println(ID);
 		try {
@@ -71,10 +71,9 @@ public class MainAttendanceServlet extends HttpServlet {
 	protected void showAttendance(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, SQLException {
 		HttpSession session = request.getSession();
-		String Username = (String) request.getParameter("Username");
 		UploadAttandanceDao showAttendance = new UploadAttandanceDao();
-		List<AttandanceModel> showAttend = showAttendance.showAttendance(Username);
-		session.setAttribute(Username, showAttend);
+		List<AttandanceAdminModel> showAttend = showAttendance.showAttendance();
+		session.setAttribute("showAttendace", showAttend);
 		response.sendRedirect("Admin/ShowAttendance.jsp");
 	}
 

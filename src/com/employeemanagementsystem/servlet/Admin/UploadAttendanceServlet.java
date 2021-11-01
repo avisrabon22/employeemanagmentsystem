@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.employeemanagementsystem.DAO.Admin.UploadAttandanceDao;
-import com.employeemanagementsystem.model.Admin.AttandanceModel;
+import com.employeemanagementsystem.model.Admin.AttandanceAdminModel;
 import com.employeemanagementsystem.model.Admin.SignUpModel;
 
 
