@@ -30,7 +30,12 @@ public class MainAttendanceServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		showAttendance(request, response);
+		try {
+			showAttendance(request, response);
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		System.out.println("In attendance get");
 	}
 
