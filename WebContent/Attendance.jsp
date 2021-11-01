@@ -20,18 +20,19 @@
 		response.sendRedirect("Login.jsp");
 	}
 	%>
-<!--*******************************************************************************************************************  -->
+	<!--*******************************************************************************************************************  -->
 	<%
 	List<AttendanceModel> attendance = (List<AttendanceModel>) session.getAttribute("userAttendance");
 	%>
 	<h1 class="text-center">Attendance</h1>
-	
+
 	<%
 	if (attendance != null) {
 	%>
 	<table class="table border">
 		<thead>
 			<tr>
+				<th>Name</th>
 				<th>Date</th>
 				<th>In Time</th>
 				<th>Out Time</th>
@@ -40,22 +41,25 @@
 			</tr>
 		</thead>
 		<tbody>
-	<%for (AttendanceModel userattendance : attendance) {%>
-		<tr>
-		<td><%=userattendance.getDate()%></td>
-		<td><%=userattendance.getIntime()%></td>
-		<td><%=userattendance.getOuttime()%></td>
-		<td><%=userattendance.getStatus()%></td>
-		</tr>
-		
-		
+			<%
+			for (AttendanceModel userattendance : attendance) {
+			%>
+			<tr>
+				<td><%=userattendance.getName()%></td>
+				<td><%=userattendance.getDate()%></td>
+				<td><%=userattendance.getIntime()%></td>
+				<td><%=userattendance.getOuttime()%></td>
+				<td><%=userattendance.getStatus()%></td>
+			</tr>
+
+			<%
+			}
+			}
+			%>
 		</tbody>
 	</table>
 
-	<%
-	}
-	}
-	%>
+
 	<div></div>
 
 

@@ -13,37 +13,34 @@ import javax.servlet.http.HttpSession;
 import com.employeemanagementsystem.DAO.AttendanceDao;
 import com.employeemanagementsystem.model.AttendanceModel;
 
-
 @WebServlet("/AttendanceServlet")
 public class AttendanceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-        
-    public AttendanceServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		AttendanceDao forAttendance=new AttendanceDao();
-	String username=(String)request.getAttribute("username");
-			List<AttendanceModel> userAttendance =new ArrayList<AttendanceModel>();
-			try {
-				userAttendance =forAttendance.getAttendance();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			session.setAttribute("userAttendance", userAttendance);
-			response.sendRedirect("Attendance.jsp");	
-		
+	public AttendanceServlet() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	
-	
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		AttendanceDao forAttendance = new AttendanceDao();
+		String username = (String) session.getAttribute("USER");
+		List<AttendanceModel> userAttendance = new ArrayList<AttendanceModel>();
+		try {
+			userAttendance = forAttendance.getAttendance(username);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		session.setAttribute("userAttendance", userAttendance);
+		response.sendRedirect("Attendance.jsp");
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

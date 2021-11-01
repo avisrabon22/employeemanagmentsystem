@@ -45,7 +45,7 @@
 					class="m-1">
 			</div>
 			<div class="mb-1">
-				Name<input readonly name="Username" type="text"
+				Username<input readonly name="Username" type="text"
 					value="<%=userAttandance.getUsername()%>" placeholder=""
 					class="m-1">
 			</div>
