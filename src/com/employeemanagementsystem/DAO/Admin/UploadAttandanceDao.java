@@ -72,7 +72,7 @@ public  List<AttandanceAdminModel> showAttendance() throws SQLException {
 		AttandanceAdminModel attendanceShow=new AttandanceAdminModel();
 		attendanceShow.setID(rs.getInt("id"));
 		attendanceShow.setName(rs.getString("name"));
-		attendanceShow.setUsername("username");
+		attendanceShow.setUsername(rs.getString("username"));
 		attendanceShow.setDate(rs.getString("date"));
 		attendanceShow.setInTime(rs.getString("intime"));
 		attendanceShow.setOutTime(rs.getString("outtime"));
