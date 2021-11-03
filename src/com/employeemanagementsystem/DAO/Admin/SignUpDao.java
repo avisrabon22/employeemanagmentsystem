@@ -67,7 +67,6 @@ public class SignUpDao {
 		rs.close();
 		ps.close();
 		return userFind;
-
 		// End function******************************************************
 	}
 

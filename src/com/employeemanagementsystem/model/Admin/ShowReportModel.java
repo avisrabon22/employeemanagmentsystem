@@ -9,8 +9,6 @@ public class ShowReportModel {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-
 	public ShowReportModel(int id,String name, String date, String logintime, String logouttime, String workingtime) {
 		super();
 		this.id = id;
@@ -21,43 +19,29 @@ public class ShowReportModel {
 		this.workingtime = workingtime;
 	}
 
-
-
 	public int getId() {
 		return id;
 	}
-
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
-
 	public String getName() {
 		return name;
 	}
-
-
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
-
 	public String getDate() {
 		return date;
 	}
 
-
-
 	public void setDate(String date) {
 		this.date = date;
 	}
-
-
 
 	public String getLogintime() {
 		return logintime;
@@ -78,7 +62,7 @@ public class ShowReportModel {
 	public String getWorkingtime() {
 		return workingtime;
 	}
-
+	
 	public void setWorkingtime(String workingtime) {
 		this.workingtime = workingtime;
 	}

@@ -5,8 +5,6 @@ public class ReportModel {
 	String date,InTime,OutTime,Status,name;
 	int id;
 	
-	
-
 	public ReportModel() {
 		super();
 		// TODO Auto-generated constructor stub

@@ -4,15 +4,10 @@ public class AttendanceModel {
 int id;
 String date,intime,outtime,status,name,username;
 
-
-
-
 public AttendanceModel() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-
-
 
 public int getId() {
 	return id;
@@ -21,7 +16,6 @@ public int getId() {
 public void setId(int id) {
 	this.id = id;
 }
-
 
 public String getName() {
 	return name;
