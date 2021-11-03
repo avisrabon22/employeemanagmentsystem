@@ -67,8 +67,6 @@
 				<input name="Status" type="text" placeholder="Status">
 			</div> 
 
-
-	
 			<input type="submit" value="Mark">
 		</form>
 		<%
