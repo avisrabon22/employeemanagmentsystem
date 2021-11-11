@@ -30,7 +30,7 @@
 	<h1 class="text-center">Employee Management Login</h1>
 	<div class="d-flex justify-content-center">
 
-		<form action="/UserServlet" method="post">
+		<form action="<%=request.getContextPath()%>/UserServlet" method="post">
 
 			<table>
 				<tr>
