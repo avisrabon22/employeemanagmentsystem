@@ -8,11 +8,8 @@
 <meta charset="ISO-8859-1">
 <%@include file="Allcomp/allcomp.jsp"%>
 
-
 <title>Login</title>
 </head>
-
-
 
 <body>
 	<%
@@ -32,7 +29,9 @@
 
 	<h1 class="text-center">Employee Management Login</h1>
 	<div class="d-flex justify-content-center">
-		<form action="UserServlet" method="post">
+
+		<form action="/UserServlet" method="post">
+
 			<table>
 				<tr>
 					<td><input type="email" name="username" placeholder="Username" /></td>
