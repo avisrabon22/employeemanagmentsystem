@@ -18,39 +18,47 @@ import com.employeemanagementsystem.model.Admin.SignUpModel;
 @WebServlet("/SignupServlet")
 public class SignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public SignupServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		SignUpDao Signup=new SignUpDao();
-		int editID=Integer.parseInt(request.getParameter("edit_user"));
-		try {
-			List<SignUpModel>findUserForUpdate=Signup.editUser(editID);
-			session.setAttribute("userUpdateData", findUserForUpdate);
-			response.sendRedirect("Admin/Signup.jsp");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
+	public SignupServlet() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		System.out.print("In");
-		HttpSession session=request.getSession();
-		SignUpDao Signup=new SignUpDao();
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		SignUpDao Signup = new SignUpDao();
 		
-		String Fname=(String)request.getParameter("fname");
-		String username=(String)request.getParameter("username");
-		String password=(String)request.getParameter("password");
-		String gender=(String)request.getParameter("Gender");
-		String role=(String)request.getParameter("Role");
-		String contactnumber=(String)request.getParameter("contactnumber");
-		SignUpModel signupList=new SignUpModel(Fname,username,password,gender,role,contactnumber); 
+		if (request.getParameter("edit_user") != null) {
+			try {
+				int editID = Integer.parseInt(request.getParameter("edit_user"));
+				List<SignUpModel> findUserForUpdate = Signup.editUser(editID);
+				session.setAttribute("userUpdateData", findUserForUpdate);
+				response.sendRedirect("Admin/Signup.jsp");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			session.setAttribute("Signup", "");
+			response.sendRedirect("Admin/Signup.jsp");
+		}
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+//		System.out.print("In");
+		HttpSession session = request.getSession();
+		SignUpDao Signup = new SignUpDao();
+
+		String Fname = (String) request.getParameter("fname");
+		String username = (String) request.getParameter("username");
+		String password = (String) request.getParameter("password");
+		String gender = (String) request.getParameter("Gender");
+		String role = (String) request.getParameter("Role");
+		String contactnumber = (String) request.getParameter("contactnumber");
+		SignUpModel signupList = new SignUpModel(Fname, username, password, gender, role, contactnumber);
 		Signup.SignUp(signupList);
 		session.setAttribute("UserAdded", "User added successfully !");
 		response.sendRedirect("Admin/Signup.jsp");

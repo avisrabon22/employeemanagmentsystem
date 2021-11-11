@@ -37,7 +37,7 @@
 	</div>
 
 	<div class="m-1">
-		<a href="http://localhost:8080/employeemanagementsystem/Aboutus.jsp">About
+		<a href="<%=request.getContextPath()%>/AboutServlet">About
 			us</a>
 	</div>
 

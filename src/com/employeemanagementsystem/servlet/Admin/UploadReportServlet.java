@@ -25,11 +25,13 @@ public class UploadReportServlet extends HttpServlet {
 
 	public UploadReportServlet() {
 		super();
+		
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		response.sendRedirect("Admin/UploadReport.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

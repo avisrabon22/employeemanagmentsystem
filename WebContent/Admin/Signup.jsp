@@ -27,6 +27,8 @@
 	<div class="d-flex justify-content-center">
 		<%
 		List<SignUpModel> update = (List<SignUpModel>) session.getAttribute("userUpdateData");
+		String Signup=(String)session.getAttribute("Signup");
+		
 		if (update != null) {
 			for (SignUpModel updates : update) {
 		%>
@@ -77,7 +79,7 @@
 		<%
 		}
 		session.removeAttribute("userUpdateData");
-		} else {
+		} else if(Signup!=null) {
 		%>
 		<!--********************Insert form***************************************************************************-->
 		<form action="<%=request.getContextPath()%>/SignupServlet"

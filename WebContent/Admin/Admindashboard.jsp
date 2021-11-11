@@ -22,7 +22,7 @@
 	<div class="m-2">
 		<div class="m-2">
 			<a
-				href="http://localhost:8080/employeemanagementsystem/Admin/Signup.jsp"
+				href="<%=request.getContextPath()%>/SignupServlet"
 				class="">Add User</a>
 		</div>
 	</div>
@@ -33,7 +33,7 @@
 		</div>
 		<div class="m-2">
 			<a
-				href="http://localhost:8080/employeemanagementsystem/Admin/UploadReport.jsp"
+				href="<%=request.getContextPath()%>/UploadReportServlet"
 				class="">Upload Report</a>
 		</div>
 		
