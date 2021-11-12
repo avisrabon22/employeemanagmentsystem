@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 \\Tag Section******************************************
-body{
+/* body{
 box-sizing:content-box;
 }
 
@@ -15,10 +15,10 @@ table{
 
 th,tr,td{
 	border:1px solid black; 
-}
+} */
 
 \\Class Section*****************************************
-.loginform {
+/* .loginform {
 	align-content: center;
 	display: block;
 	margin-left: 40%;	
@@ -30,4 +30,10 @@ th,tr,td{
 
 .gap{
 	margin:1%;
+}
+ */
+
+.login:hover {
+background-color: red;
+opacity: 0.5;
 }

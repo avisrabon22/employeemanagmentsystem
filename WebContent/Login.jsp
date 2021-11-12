@@ -28,20 +28,20 @@
 	</form>
 
 	<h1 class="text-center">Employee Management Login</h1>
-	<div class="d-flex justify-content-center">
+	<div class="form-group d-flex justify-content-center">
 
 		<form action="<%=request.getContextPath()%>/UserServlet" method="post">
 
 			<table>
 				<tr>
-					<td><input type="email" name="username" placeholder="Username" /></td>
+					<td><input class="form-control" type="email" name="username" placeholder="Username" /></td>
 				</tr>
 				<tr>
-					<td><input type="password" name="password"
+					<td><input class="form-control" type="password" name="password"
 						placeholder="Password" /></td>
 				</tr>
 				<tr>
-					<td><input class="m-1" type="submit" value="Login" /></td>
+					<td><input class="m-1 btn btn-primary login" type="submit" value="Login" /></td>
 				</tr>
 			</table>
 		</form>
